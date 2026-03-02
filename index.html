@@ -1,23 +1,818 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investor Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHL Group – Investor Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal:   #44B0BF;
+    --teal-lt:#98DBE4;
+    --dark:   #141623;
+    --cream:  #F6F5F4;
+    --grey:   #E2E2E2;
+    --alice:  #F0FAFB;
+    --white:  #ffffff;
+    --txt:    #141623;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Poppins', sans-serif; color: var(--txt); background: var(--white); overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(20,22,35,0.95); backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-ticker {
+    background: var(--teal); color: var(--dark); font-size: 11px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center; gap: 24px; padding: 6px 24px;
+  }
+  .nav-ticker a { color: var(--dark); text-decoration: none; font-weight: 700; }
+  .nav-main {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 60px; gap: 24px;
+  }
+  .nav-logo { display: flex; align-items: center; gap:10px; text-decoration: none; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-ctas { display: flex; gap: 10px; }
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px; border-radius: 100px; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer; border: none; text-decoration: none; transition: all .2s; }
+  .btn-outline { background: transparent; border: 1.5px solid rgba(255,255,255,0.4); color: var(--white); }
+  .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+  .btn-primary { background: var(--teal); color: var(--dark); }
+  .btn-primary:hover { background: var(--teal-lt); }
+  .btn-dark { background: var(--dark); color: var(--white); }
+  .btn-dark:hover { background: #1e2235; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; background: var(--dark);
+    display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+    padding: 140px 60px 80px; gap: 60px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(68,176,191,0.12), transparent);
+    pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(68,176,191,0.15); border: 1px solid rgba(68,176,191,0.3);
+    color: var(--teal); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 100px;
+    letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 24px;
+  }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero h1 {
+    font-size: clamp(38px, 5vw, 64px); font-weight: 700; color: var(--white);
+    line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 20px;
+  }
+  .hero h1 em { color: var(--teal); font-style: normal; }
+  .hero-sub { color: rgba(255,255,255,0.6); font-size: 16px; line-height: 1.7; margin-bottom: 36px; max-width: 480px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+
+  /* hero subscribe */
+  .hero-subscribe { margin-top: 4px; }
+  .hero-sub-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+  .hero-sub-form { display: flex; gap: 8px; }
+  .hero-sub-input { flex: 1; padding: 12px 18px; border-radius: 100px; border: 1.5px solid rgba(255,255,255,0.15); font-family: inherit; font-size: 14px; background: rgba(255,255,255,0.06); color: var(--white); outline: none; transition: border-color .2s, background .2s; }
+  .hero-sub-input:focus { border-color: var(--teal); background: rgba(255,255,255,0.1); }
+  .hero-sub-input::placeholder { color: rgba(255,255,255,0.35); }
+  .hero-sub-note { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 8px; }
+
+  /* right panel */
+  .hero-right { display: flex; flex-direction: column; gap: 16px; }
+  .share-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px; padding: 28px; backdrop-filter: blur(10px);
+  }
+  .sc-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
+  .sc-price { font-size: 42px; font-weight: 700; color: var(--white); }
+  .sc-meta { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+  .sc-chart { margin-top: 16px; height: 60px; position: relative; }
+  .sc-chart svg { width: 100%; height: 100%; }
+
+  /* video card */
+  .video-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px; overflow: hidden; cursor: pointer; position: relative;
+    transition: border-color .2s;
+  }
+  .video-card:hover { border-color: var(--teal); }
+  .video-thumb {
+    height: 180px; background: linear-gradient(135deg, #1a3040 0%, #0d2030 100%);
+    display: flex; align-items: center; justify-content: center; position: relative;
+    overflow: hidden;
+  }
+  .video-thumb::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='400' height='180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-20 160 Q100 80 200 120 T420 60' stroke='rgba(68,176,191,0.2)' fill='none' stroke-width='1.5'/%3E%3Cpath d='M-20 130 Q80 50 180 90 T400 30' stroke='rgba(68,176,191,0.1)' fill='none' stroke-width='1'/%3E%3C/svg%3E") center/cover;
+  }
+  .play-btn {
+    width: 56px; height: 56px; background: var(--teal); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; z-index: 1;
+    box-shadow: 0 0 0 12px rgba(68,176,191,0.2);
+  }
+  .play-btn svg { margin-left: 4px; }
+  .video-info { padding: 16px 20px; }
+  .video-badge { font-size: 10px; font-weight: 600; color: var(--teal); text-transform: uppercase; letter-spacing: 1px; }
+  .video-title { font-size: 14px; font-weight: 600; color: var(--white); margin-top: 4px; }
+  .video-date { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 3px; }
+
+  /* ── SECTION SHELLS ── */
+  section { padding: 80px 60px; }
+  .section-tag { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--teal); margin-bottom: 12px; }
+  .section-h { font-size: clamp(28px, 3vw, 42px); font-weight: 700; line-height: 1.15; letter-spacing: -1px; }
+  .section-sub { font-size: 16px; color: rgba(20,22,35,0.6); line-height: 1.7; margin-top: 12px; max-width: 560px; }
+  .section-hd { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 16px; }
+
+  /* ── KEY METRICS ── */
+  .metrics { background: var(--dark); }
+  .metrics .section-h { color: var(--white); }
+  .metrics .section-sub { color: rgba(255,255,255,0.5); }
+  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; }
+  .metric-box { background: rgba(255,255,255,0.04); padding: 36px 28px; }
+  .metric-num { font-size: 40px; font-weight: 700; color: var(--white); }
+  .metric-num span { color: var(--teal); }
+  .metric-lbl { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 6px; line-height: 1.4; }
+
+  .map-divider { width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--teal), transparent); opacity: 0.3; margin: 0; }
+
+  /* ── NEWS ── */
+  .news { background: var(--cream); }
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .news-card {
+    background: var(--white); border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--grey); transition: transform .2s, box-shadow .2s;
+  }
+  .news-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+  .news-img { height: 160px; background: var(--alice); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .news-img-placeholder {
+    width: 100%; height: 100%; background: linear-gradient(135deg, var(--teal-lt) 0%, var(--alice) 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .news-body { padding: 20px; }
+  .news-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); }
+  .news-title { font-size: 15px; font-weight: 600; line-height: 1.4; margin: 8px 0 12px; color: var(--dark); }
+  .news-date { font-size: 12px; color: rgba(20,22,35,0.4); }
+  .news-cta { margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+
+  /* ── WHY OWN ── */
+  .why { background: var(--white); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .why-visual {
+    background: var(--dark); border-radius: 24px; padding: 48px 40px;
+    position: relative; overflow: hidden;
+  }
+  .why-visual::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(68,176,191,0.2), transparent);
+  }
+  .why-van-stat { position: relative; z-index: 1; }
+  .wvs-num { font-size: 56px; font-weight: 700; color: var(--white); line-height: 1; }
+  .wvs-num span { color: var(--teal); }
+  .wvs-lbl { color: rgba(255,255,255,0.6); font-size: 15px; margin-top: 8px; }
+  .why-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+  .pill { background: rgba(68,176,191,0.15); border: 1px solid rgba(68,176,191,0.3); color: var(--teal); font-size: 12px; font-weight: 500; padding: 6px 14px; border-radius: 100px; }
+  .why-points { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
+  .why-point { display: flex; gap: 16px; align-items: flex-start; }
+  .wp-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--alice); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .wp-title { font-size: 15px; font-weight: 600; color: var(--dark); }
+  .wp-text { font-size: 13px; color: rgba(20,22,35,0.6); margin-top: 3px; line-height: 1.5; }
+
+  /* ── SUBSCRIBE ── */
+  .subscribe { background: var(--teal); position: relative; overflow: hidden; }
+  .subscribe::before {
+    content: ''; position: absolute; right: -80px; top: 50%; transform: translateY(-50%);
+    width: 400px; height: 400px; opacity: 0.15;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 140 Q50 30 100 80 Q150 130 190 40' stroke='white' fill='none' stroke-width='2'/%3E%3Cpath d='M10 100 Q60 60 100 90 Q140 120 190 60' stroke='white' fill='none' stroke-width='1.5'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+  .sub-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; position: relative; }
+  .sub-inner h2 { font-size: 36px; font-weight: 700; color: var(--dark); line-height: 1.2; letter-spacing: -1px; }
+  .sub-inner p { color: rgba(20,22,35,0.7); margin-top: 12px; font-size: 15px; line-height: 1.6; }
+  .sub-form { display: flex; gap: 10px; }
+  .sub-input {
+    flex: 1; padding: 14px 20px; border-radius: 100px; border: 2px solid rgba(20,22,35,0.2);
+    font-family: inherit; font-size: 14px; background: rgba(255,255,255,0.8);
+    color: var(--dark); outline: none;
+  }
+  .sub-input:focus { border-color: var(--dark); background: var(--white); }
+  .sub-input::placeholder { color: rgba(20,22,35,0.4); }
+  .sub-note { font-size: 12px; color: rgba(20,22,35,0.5); margin-top: 10px; }
+
+  /* ── INVESTOR TOOLS ── */
+  .tools { background: var(--dark); }
+  .tools .section-h { color: var(--white); }
+  .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+  .tool-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px; padding: 32px; transition: border-color .2s, background .2s; cursor: pointer;
+    text-decoration: none;
+  }
+  .tool-card:hover { border-color: var(--teal); background: rgba(68,176,191,0.06); }
+  .tool-icon { width: 48px; height: 48px; border-radius: 14px; background: rgba(68,176,191,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .tool-icon svg { color: var(--teal); }
+  .tool-title { font-size: 16px; font-weight: 600; color: var(--white); }
+  .tool-desc { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 6px; line-height: 1.5; }
+  .tool-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--teal); margin-top: 16px; }
+
+  /* ── BRANDS ── */
+  .brands { background: var(--alice); }
+  .brands-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .brand-card { background: var(--white); border-radius: 16px; padding: 32px; border: 1px solid var(--grey); }
+  .brand-name { font-size: 22px; font-weight: 700; color: var(--dark); }
+  .brand-desc { font-size: 13px; color: rgba(20,22,35,0.6); margin-top: 10px; line-height: 1.6; }
+  .brand-tag { display: inline-flex; margin-top: 16px; background: var(--alice); color: var(--teal); font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 100px; }
+
+  /* ── TEAM ── */
+  .team { background: var(--white); }
+  .team-tabs { display: flex; gap: 4px; background: var(--cream); border-radius: 100px; padding: 4px; width: fit-content; margin-bottom: 48px; }
+  .team-tab { padding: 10px 24px; border-radius: 100px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; font-family: inherit; background: transparent; color: rgba(20,22,35,0.5); transition: all .2s; }
+  .team-tab.active { background: var(--dark); color: var(--white); }
+  .team-tab:hover:not(.active) { color: var(--dark); }
+  .team-panel { display: none; }
+  .team-panel.active { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .team-card {
+    border: 1px solid var(--grey); border-radius: 20px; overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .team-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,0.08); }
+  .team-photo {
+    height: 200px; display: flex; align-items: center; justify-content: center;
+    background: var(--dark); position: relative; overflow: hidden;
+  }
+  .team-photo::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 60% 0%, rgba(68,176,191,0.2), transparent 70%);
+  }
+  .team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .team-initials {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: rgba(68,176,191,0.15); border: 2px solid rgba(68,176,191,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: 700; color: var(--teal); z-index: 1; position: relative;
+  }
+  .team-body { padding: 20px 22px 24px; }
+  .team-name { font-size: 17px; font-weight: 700; color: var(--dark); }
+  .team-role { font-size: 12px; font-weight: 600; color: var(--teal); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+  .team-bio { font-size: 13px; color: rgba(20,22,35,0.6); line-height: 1.65; margin-top: 12px; }
+  .team-divider { width: 32px; height: 2px; background: var(--teal); margin: 14px 0; border-radius: 2px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0d0f1a; padding: 60px; color: rgba(255,255,255,0.5); font-size: 13px;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+  }
+  footer h4 { color: var(--white); font-size: 14px; font-weight: 600; margin-bottom: 16px; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; display: block; margin-bottom: 10px; transition: color .2s; }
+  footer a:hover { color: var(--teal); }
+  .footer-copy { border-top: 1px solid rgba(255,255,255,0.08); padding: 24px 60px; color: rgba(255,255,255,0.3); font-size: 12px; background: #0d0f1a; display: flex; justify-content: space-between; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero, .sub-inner, .why-grid { grid-template-columns: 1fr; }
+    .metrics-grid, .tools-grid, .brands-row, .news-grid { grid-template-columns: 1fr; }
+    .team-panel.active { grid-template-columns: 1fr; }
+    section, .hero { padding: 60px 24px; }
+    .nav-main { padding: 14px 24px; }
+    .nav-links { display: none; }
+    footer { grid-template-columns: 1fr 1fr; padding: 40px 24px; }
+    .footer-copy { padding: 24px; flex-direction: column; gap: 8px; }
+  }
+</style>
 </head>
 <body>
-    <h1>Welcome to the Investor Hub</h1>
-    <p>This is your go-to place for all investor-related information.</p>
-    <section>
-        <h2>Latest News</h2>
-        <p>Stay updated with the latest news and updates about investments.</p>
-    </section>
-    <section>
-        <h2>Resources</h2>
-        <p>Find documents, reports, and links to valuable resources.</p>
-    </section>
-    <footer>
-        <p>Contact us at: <a href="mailto:investors@company.com">investors@company.com</a></p>
-    </footer>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-ticker">
+    <span>ASX: CHL</span>
+    <span>Share Price: <strong>$0.37 AUD</strong> &nbsp;▲ +1.4%</span>
+    <a href="#subscribe">📬 Get investor updates →</a>
+  </div>
+  <div class="nav-main">
+    <a class="nav-logo" href="#">
+      <img src="https://chl.global/wp-content/uploads/2023/05/logo.svg" alt="CHL Group" style="height:38px;filter:brightness(0) invert(1);">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#news">News</a></li>
+      <li><a href="#metrics">Performance</a></li>
+      <li><a href="#why-invest">Why Invest</a></li>
+      <li><a href="#brands">Our Brands</a></li>
+      <li><a href="#tools">Investor Tools</a></li>
+      <li><a href="#team">Our Team</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a class="btn btn-outline" href="https://investor.automic.com.au/#/home" target="_blank">Shareholder Login</a>
+      <a class="btn btn-primary" href="#subscribe">Get Updates</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-tag">ASX Listed · CHL · Adventure Travel</div>
+    <h1>Invest in the<br>future of <em>adventure</em><br>travel.</h1>
+    <p class="hero-sub">CHL Group is reimagining how the world experiences the outdoors — connecting van owners with adventurers across 7 countries through technology-led platforms.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#why-invest">Why Invest in CHL</a>
+      <a class="btn btn-outline" href="#tools">ASX Announcements</a>
+    </div>
+    <div class="hero-subscribe">
+      <p class="hero-sub-label">Get shareholder updates direct to your inbox</p>
+      <div class="hero-sub-form">
+        <input class="hero-sub-input" type="email" placeholder="Your email address">
+        <button class="btn btn-primary">Subscribe</button>
+      </div>
+      <p class="hero-sub-note">ASX announcements · CEO videos · Quarterly reports. No spam.</p>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="share-card">
+      <div class="sc-label">CHL Share Price · ASX</div>
+      <div class="sc-price">$0.37 <span style="font-size:16px;font-weight:400;color:rgba(255,255,255,0.4)">AUD</span></div>
+      <div class="sc-meta" style="color:rgba(152,219,228,0.9)">▲ +0.01 (+1.39%) today</div>
+      <div class="sc-chart">
+        <svg viewBox="0 0 300 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs><linearGradient id="cg" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#44B0BF" stop-opacity="0.3"/><stop offset="100%" stop-color="#44B0BF" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0 40 L30 36 L60 42 L90 32 L110 38 L140 25 L170 30 L200 20 L230 28 L260 18 L300 22" stroke="#44B0BF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M0 40 L30 36 L60 42 L90 32 L110 38 L140 25 L170 30 L200 20 L230 28 L260 18 L300 22 L300 60 L0 60 Z" fill="url(#cg)"/>
+        </svg>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <a class="btn btn-primary" style="font-size:12px;padding:8px 16px" href="https://investor.automic.com.au/#/home" target="_blank">Shareholder Login</a>
+        <a class="btn btn-outline" style="font-size:12px;padding:8px 16px" href="#tools">ASX Announcements</a>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-thumb">
+        <div class="play-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+      <div class="video-info">
+        <div class="video-badge">🎬 Latest CEO Update</div>
+        <div class="video-title">CEO Justin Hales – Q3 2025 Business Update</div>
+        <div class="video-date">February 2025 · 8 min watch</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="map-divider"></div>
+
+<!-- ── KEY METRICS ── -->
+<section class="metrics" id="metrics">
+  <div class="section-hd">
+    <div>
+      <div class="section-tag">Performance</div>
+      <h2 class="section-h" style="color:white">Numbers that tell<br>our story.</h2>
+      <p class="section-sub">CHL continues to grow its global community of adventurers and van owners.</p>
+    </div>
+    <a class="btn btn-outline" href="#tools" style="color:white">View ASX Announcements →</a>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric-box">
+      <div class="metric-num">$315<span>m+</span></div>
+      <div class="metric-lbl">Total paid to van owner community</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-num">29,300<span>+</span></div>
+      <div class="metric-lbl">Unique vans listed globally</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-num">4.5<span>m+</span></div>
+      <div class="metric-lbl">Nights under the stars facilitated</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-num">7</div>
+      <div class="metric-lbl">Countries of operation across AU, NZ, UK, DE, AT, ES, NL</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWS ── -->
+<section class="news" id="news">
+  <div class="section-hd">
+    <div>
+      <div class="section-tag">News & Media</div>
+      <h2 class="section-h">Latest from CHL Group</h2>
+    </div>
+    <a class="btn btn-dark" href="https://www.camplify.com.au/blog/category/news" target="_blank">View all news →</a>
+  </div>
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-img">
+        <div class="news-img-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(68,176,191,0.5)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+      </div>
+      <div class="news-body">
+        <div class="news-cat">Insurance</div>
+        <div class="news-title">MyWay Australia Launches Domestic Travel Insurance for Hirers</div>
+        <div class="news-date">19 March 2025</div>
+        <a class="news-cta" href="https://chl.global/myway-australia-launches-travel-insurance/" target="_blank">Read more →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-img">
+        <div class="news-img-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(68,176,191,0.5)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+      </div>
+      <div class="news-body">
+        <div class="news-cat">Growth</div>
+        <div class="news-title">Camplify Holdings Secures #16 on AFR's Fast Global Companies List</div>
+        <div class="news-date">13 June 2023</div>
+        <a class="news-cta" href="https://chl.global/camplify-holdings-limited-secures-16-ranking-on-afrs-fast-global-list-marking-a-global-growth-milestone/" target="_blank">Read more →</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-img">
+        <div class="news-img-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(68,176,191,0.5)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+      </div>
+      <div class="news-body">
+        <div class="news-cat">Travel Trends</div>
+        <div class="news-title">Camplify Supports Surge in Flexible Post-Pandemic Road Trip Travel</div>
+        <div class="news-date">19 June 2023</div>
+        <a class="news-cta" href="https://chl.global/camplify-supports-travellers-looking-to-enjoy-flexible-travel-post-pandemic/" target="_blank">Read more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY VAN OWNERS ── -->
+<section class="why" id="why-invest">
+  <div class="why-grid">
+    <div>
+      <div class="section-tag">Van Owners & Investors</div>
+      <h2 class="section-h">You're already part<br>of the journey.<br>Now own a piece of it.</h2>
+      <p class="section-sub" style="margin-top:16px">If you're listing your van on Camplify, you're already growing the CHL business. As a shareholder, you can benefit from the platform's growth — not just as an owner, but as an investor.</p>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="wp-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#44B0BF" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div>
+            <div class="wp-title">Your earnings grow the platform</div>
+            <div class="wp-text">Every booking you take increases CHL's GBV and strengthens the business you invest in. Your success as an owner directly drives shareholder value.</div>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="wp-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#44B0BF" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <div class="wp-title">Unique insight no analyst has</div>
+            <div class="wp-text">You experience the product first-hand — the demand, the seasonality, the repeat hirers. That's a genuine edge when evaluating CHL as an investment.</div>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="wp-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#44B0BF" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          </div>
+          <div>
+            <div class="wp-title">Community with skin in the game</div>
+            <div class="wp-text">As a shareholder, you're invested in features that benefit owners — better pricing tools, more hirers, and smarter insurance. Your feedback shapes the roadmap.</div>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="wp-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#44B0BF" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div>
+            <div class="wp-title">Accessible from $500</div>
+            <div class="wp-text">CHL is listed on the ASX — you can buy shares through any standard broker account. Starting small is fine; growing alongside us is the point.</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="#subscribe">Get the Investor Kit</a>
+        <a class="btn btn-dark" href="https://www.camplify.com.au" target="_blank">Visit Camplify</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="why-visual">
+        <div class="why-van-stat">
+          <div class="wvs-num">$315<span>m+</span></div>
+          <div class="wvs-lbl">paid to van owners since launch</div>
+          <div class="why-pills" style="margin-top:24px">
+            <span class="pill">🇦🇺 Australia</span>
+            <span class="pill">🇳🇿 New Zealand</span>
+            <span class="pill">🇬🇧 United Kingdom</span>
+            <span class="pill">🇩🇪 Germany</span>
+            <span class="pill">🇦🇹 Austria</span>
+            <span class="pill">🇪🇸 Spain</span>
+            <span class="pill">🇳🇱 Netherlands</span>
+          </div>
+        </div>
+        <div style="margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.1)">
+          <div style="color:rgba(255,255,255,0.5);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Owner quote</div>
+          <p style="color:rgba(255,255,255,0.8);font-size:14px;line-height:1.7;font-style:italic">"I've made over $40k renting my motorhome through Camplify. When I heard it was ASX listed, buying shares was a no-brainer. I believe in the platform."</p>
+          <p style="color:var(--teal);font-size:13px;margin-top:10px;font-weight:600">— Sarah K., Camplify owner, QLD</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SUBSCRIBE ── -->
+<section class="subscribe" id="subscribe">
+  <div class="sub-inner">
+    <div>
+      <h2>Stay ahead of<br>the market.</h2>
+      <p>Subscribe to receive CHL investor updates, ASX announcements, CEO video briefings, and quarterly performance summaries direct to your inbox.</p>
+    </div>
+    <div>
+      <div class="sub-form">
+        <input class="sub-input" type="email" placeholder="Your email address">
+        <button class="btn btn-dark">Subscribe</button>
+      </div>
+      <div style="display:flex;gap:24px;margin-top:20px;flex-wrap:wrap">
+        <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(20,22,35,0.7);cursor:pointer"><input type="checkbox" checked> ASX Announcements</label>
+        <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(20,22,35,0.7);cursor:pointer"><input type="checkbox" checked> CEO Video Updates</label>
+        <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(20,22,35,0.7);cursor:pointer"><input type="checkbox"> Quarterly Reports</label>
+      </div>
+      <p class="sub-note">No spam. Unsubscribe any time. CHL investor comms only.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── INVESTOR TOOLS ── -->
+<section class="tools" id="tools">
+  <div class="section-tag" style="color:var(--teal)">Investor Centre</div>
+  <h2 class="section-h" style="color:white">Everything you need<br>in one place.</h2>
+  <div class="tools-grid">
+    <a class="tool-card" href="https://chl.global/asx-announcements/" target="_blank">
+      <div class="tool-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div class="tool-title">ASX Announcements</div>
+      <div class="tool-desc">Browse all regulatory filings and market disclosures lodged with the ASX.</div>
+      <div class="tool-link">View announcements →</div>
+    </a>
+    <a class="tool-card" href="https://investor.automic.com.au/#/home" target="_blank">
+      <div class="tool-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="tool-title">My Shareholding</div>
+      <div class="tool-desc">Log in to the Automic registry to view holdings, update details or elect DRP.</div>
+      <div class="tool-link">Log in →</div>
+    </a>
+    <a class="tool-card" href="https://chl.global/wp-content/uploads/2023/06/Camplify-Prospectus.pdf" target="_blank">
+      <div class="tool-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <div class="tool-title">Prospectus & Reports</div>
+      <div class="tool-desc">Download the original prospectus, annual reports and investor presentations.</div>
+      <div class="tool-link">Download →</div>
+    </a>
+    <a class="tool-card" href="#">
+      <div class="tool-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <div class="tool-title">Investor Calendar</div>
+      <div class="tool-desc">Key dates including AGM, half-year results, full-year results and trading halts.</div>
+      <div class="tool-link">View calendar →</div>
+    </a>
+    <a class="tool-card" href="#subscribe">
+      <div class="tool-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div class="tool-title">Email Alerts</div>
+      <div class="tool-desc">Subscribe for instant email notifications of ASX announcements and CEO updates.</div>
+      <div class="tool-link">Subscribe →</div>
+    </a>
+    <a class="tool-card" href="https://chl.global/about-us/" target="_blank">
+      <div class="tool-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="tool-title">Board & Governance</div>
+      <div class="tool-desc">Meet the Board of Directors and review CHL's corporate governance framework.</div>
+      <div class="tool-link">View governance →</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── BRANDS ── -->
+<section class="brands" id="brands">
+  <div class="section-hd">
+    <div>
+      <div class="section-tag">Portfolio</div>
+      <h2 class="section-h">Three brands,<br>one mission.</h2>
+    </div>
+    <a class="btn btn-dark" href="https://chl.global/our-brands/" target="_blank">Our brands →</a>
+  </div>
+  <div class="brands-row">
+    <div class="brand-card">
+      <div style="font-size:28px;margin-bottom:12px">🚐</div>
+      <div class="brand-name">Camplify</div>
+      <div class="brand-desc">The world's largest van-sharing marketplace. Connecting van owners with adventurers across AU, NZ, UK and ES.</div>
+      <span class="brand-tag">Core Platform · AU · NZ · UK · ES</span>
+    </div>
+    <div class="brand-card">
+      <div style="font-size:28px;margin-bottom:12px">🏕️</div>
+      <div class="brand-name">PaulCamper</div>
+      <div class="brand-desc">A leading European van-sharing platform based in Berlin, serving Germany, Austria, the UK and the Netherlands.</div>
+      <span class="brand-tag">European Platform · DE · AT · UK · NL</span>
+    </div>
+    <div class="brand-card">
+      <div style="font-size:28px;margin-bottom:12px">🛡️</div>
+      <div class="brand-name">MyWay</div>
+      <div class="brand-desc">CHL's global insurance division, protecting hirers and owners across all markets with tailored coverage.</div>
+      <span class="brand-tag">Insurance Division · Launched 2023</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── TEAM ── -->
+<section class="team" id="team">
+  <div class="section-hd">
+    <div>
+      <div class="section-tag">Leadership</div>
+      <h2 class="section-h">Meet the team<br>behind CHL.</h2>
+      <p class="section-sub">Experienced operators, founders and industry leaders building the future of adventure travel.</p>
+    </div>
+  </div>
+
+  <div class="team-tabs">
+    <button class="team-tab active" onclick="switchTab('board', this)">Board of Directors</button>
+    <button class="team-tab" onclick="switchTab('exec', this)">Executive Team</button>
+  </div>
+
+  <!-- Board -->
+  <div class="team-panel active" id="board">
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://chl.global/wp-content/uploads/2023/05/Justin-Hales.jpg" alt="Justin Hales" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="team-initials" style="display:none">JH</div>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Justin Hales</div>
+        <div class="team-role">CEO & Executive Director</div>
+        <div class="team-divider"></div>
+        <div class="team-bio">As Camplify and CHL's founder, Justin is recognised as an expert in digital, e-commerce, and marketplaces and has won numerous awards for his entrepreneurial successes, including Young Entrepreneur of the Year (Tourism & Hospitality).</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://chl.global/wp-content/uploads/2023/05/Andrew-McEvoy.jpg" alt="Andrew McEvoy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="team-initials" style="display:none">AM</div>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Andrew McEvoy</div>
+        <div class="team-role">Chairperson & Non-Executive Director</div>
+        <div class="team-divider"></div>
+        <div class="team-bio">Andrew is chairman of Travello, a director at Voyages Indigenous Tourism Australia, and the former CEO of Tourism Australia. He was also Managing Director of the tourism sector at NEOM in the Middle East.</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://chl.global/wp-content/uploads/2023/05/John-Myler.jpg" alt="John Myler" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="team-initials" style="display:none">JM</div>
+      </div>
+      <div class="team-body">
+        <div class="team-name">John Myler</div>
+        <div class="team-role">Non-Executive Director</div>
+        <div class="team-divider"></div>
+        <div class="team-bio">An experienced insurance executive with a track record of exceptional results in complex environments. John has held senior roles including CEO of Auto & General, CEO of RACQ Insurance, and CEO of Allianz Worldwide Partners.</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://chl.global/wp-content/uploads/2023/05/Mike-Rosenbaum.jpg" alt="Mike Rosenbaum" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="team-initials" style="display:none">MR</div>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Mike Rosenbaum</div>
+        <div class="team-role">Non-Executive Director</div>
+        <div class="team-divider"></div>
+        <div class="team-bio">Mike has over 20 years leading high-growth technology companies in the peer-to-peer and sharing economy. Founder and CEO of Spacer Technologies, co-founder of DealsDirect, and early investor and NED of Car Next Door, acquired by Uber.</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://chl.global/wp-content/uploads/2023/05/Karl-Trouchet.jpg" alt="Karl Trouchet" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="team-initials" style="display:none">KT</div>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Karl Trouchet</div>
+        <div class="team-role">Non-Executive Director</div>
+        <div class="team-divider"></div>
+        <div class="team-bio">Former director of Apollo Tourism and Leisure (ASX:ATL) 1996–2023, where he led the acquisition of six RV businesses across Australia, Europe and North America as CFO. Currently NED of Village National Holdings Limited.</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://chl.global/wp-content/uploads/2023/05/Sharon-Xue.jpg" alt="Sharon Xue" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="team-initials" style="display:none">SX</div>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Sharon Xue</div>
+        <div class="team-role">Non-Executive Director</div>
+        <div class="team-divider"></div>
+        <div class="team-bio">A leader in the Australian RV industry. Since co-founding JB Caravans in 2010, Sharon has built a diversified national ecosystem spanning over 10 brands, including New Age Caravans, Traveller Caravans and Paradise Motorhomes.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exec Team -->
+  <div class="team-panel" id="exec">
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://chl.global/wp-content/uploads/2023/05/Justin-Hales.jpg" alt="Justin Hales" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="team-initials" style="display:none">JH</div>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Justin Hales</div>
+        <div class="team-role">Chief Executive Officer</div>
+        <div class="team-divider"></div>
+        <div class="team-bio">As Camplify and CHL's founder, Justin is recognised as an expert in digital, e-commerce, and marketplaces and has won numerous awards for his entrepreneurial successes, including Young Entrepreneur of the Year (Tourism & Hospitality).</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://chl.global/wp-content/uploads/2023/05/Brett-Edwards.jpg" alt="Brett Edwards" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="team-initials" style="display:none">BE</div>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Brett Edwards</div>
+        <div class="team-role">Chief Financial Officer</div>
+        <div class="team-divider"></div>
+        <div class="team-bio">Brett has over 35 years of experience in accounting and financial leadership, including CFO and Company Secretary at ASX-listed Kip McGrath Education Centres Ltd and a director at GMAC Australia.</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <img src="https://chl.global/wp-content/uploads/2023/05/Jeremy-Gupta.jpg" alt="Jeremy Gupta" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="team-initials" style="display:none">JG</div>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Jeremy Gupta</div>
+        <div class="team-role">Chief Technology Officer</div>
+        <div class="team-divider"></div>
+        <div class="team-bio">Jeremy has over 18 years of experience in technology, operations and strategy, including launching Autotrader in Australia and growing Loopit into a market leader in its category.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>
+    <div style="margin-bottom:16px">
+      <img src="https://chl.global/wp-content/uploads/2023/05/logo.svg" alt="CHL Group" style="height:32px;filter:brightness(0) invert(1);opacity:0.8">
+    </div>
+    <p style="font-size:13px;line-height:1.7;max-width:280px">Camplify Holdings Limited (ASX:CHL) is on a mission to make the outdoors accessible through innovative and scalable tech solutions.</p>
+    <p style="margin-top:16px;font-size:12px;color:rgba(255,255,255,0.25)">CHL was founded in Newcastle, NSW, on the traditional country of the Awabakal and Worimi peoples.</p>
+  </div>
+  <div>
+    <h4>Company</h4>
+    <a href="https://chl.global/about-us/">About Us</a>
+    <a href="https://chl.global/our-brands/">Our Brands</a>
+    <a href="https://chl.global/careers/">Careers</a>
+    <a href="https://chl.global/contact-us/">Contact</a>
+  </div>
+  <div>
+    <h4>Investors</h4>
+    <a href="https://chl.global/asx-announcements/">ASX Announcements</a>
+    <a href="https://investor.automic.com.au/#/home">Shareholder Login</a>
+    <a href="https://chl.global/investors/">Investor Centre</a>
+    <a href="#subscribe">Email Alerts</a>
+  </div>
+  <div>
+    <h4>Brands</h4>
+    <a href="https://www.camplify.com.au" target="_blank">Camplify AU</a>
+    <a href="https://paulcamper.de" target="_blank">PaulCamper</a>
+    <a href="https://myway.insure" target="_blank">MyWay Insurance</a>
+    <a href="https://www.camplify.com.au/blog/category/news" target="_blank">News Blog</a>
+  </div>
+</footer>
+<div class="footer-copy">
+  <span>© 2025 Camplify Holdings Limited (ASX: CHL). All rights reserved.</span>
+  <a href="https://chl.global/terms-conditions/" style="color:rgba(255,255,255,0.3);text-decoration:none">Terms & Conditions</a>
+</div>
+
+<script>
+  function switchTab(panel, btn) {
+    document.querySelectorAll('.team-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.team-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById(panel).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
 </body>
 </html>
