@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/base.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/styles.css">
+  <script src="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/_ds_bundle.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:var(--chl-white);font-family:var(--font-brand);color:var(--chl-forest-black)" data-screen-label="19 Key dates">
+
+  <!-- ============ TOP NAV ============ -->
+  <div style="position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--chl-gambier-grey)">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;gap:20px">
+      <a href="Home.dc.html" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/CHL-Group-Wide.svg" alt="CHL Group" style="height:30px;display:block"></a>
+      <span style="font:500 11px/1 var(--font-brand);letter-spacing:.14em;color:var(--chl-ink-40);text-transform:uppercase;border-left:1px solid var(--chl-gambier-grey);padding-left:16px">Investor hub</span>
+      <nav style="display:flex;gap:22px;align-items:center;margin-left:auto">
+        <a href="Home.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Home</a>
+        <a href="Why Invest.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Why invest</a>
+        <a href="About.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">About</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Announcements</a>
+        <a href="Webinars.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Webinars</a>
+        <a href="QA.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Q&amp;A</a>
+        <a href="Rewards.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Rewards</a>
+        <a href="Sign In.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="dark" size="sm" hint-size="90px,36px">Sign in</x-import></a>
+      </nav>
+    </div>
+  </div>
+
+  <div style="max-width:900px;margin:0 auto;padding:56px 32px 80px;display:flex;flex-direction:column;gap:32px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Eyebrow" hint-size="140px,16px">Investor services</x-import>
+      <h1 style="font:500 44px/1.25 var(--font-brand);letter-spacing:-0.01em;margin:0">Key dates</h1>
+      <p style="font:400 16px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0;max-width:600px">The financial calendar for FY20XX. Dates are indicative and may change — announcements will confirm each event.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <sc-for list="{{ dates }}" as="d" hint-placeholder-count="6">
+        <div style="display:flex;gap:24px;align-items:center;border:1px solid var(--chl-gambier-grey);border-radius:16px;padding:20px 24px;background:{{ d.bg }}">
+          <div style="width:76px;height:76px;border-radius:14px;background:{{ d.dateBg }};display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0">
+            <span style="font:600 22px/1 var(--font-brand);color:{{ d.dateColor }}">XX</span>
+            <span style="font:500 12px/1.4 var(--font-brand);color:{{ d.dateColor }};text-transform:uppercase;letter-spacing:.08em">Mon</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px;flex:1">
+            <span style="font:600 18px/1.35 var(--font-brand)">{{ d.title }}</span>
+            <span style="font:400 14px/1.5 var(--font-brand);color:var(--chl-ink-60)">{{ d.desc }}</span>
+          </div>
+          <sc-if value="{{ d.next }}" hint-placeholder-val="{{ false }}">
+            <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Badge" tone="solid" dot="{{ true }}" hint-size="90px,26px">Next up</x-import>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="background:var(--chl-questro-cream);border-radius:16px;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+      <span style="font:500 16px var(--font-brand)">Never miss a date — get calendar invites and reminders by email.</span>
+      <a href="Sign In.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="sm" hint-size="180px,36px">Get investor updates</x-import></a>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:var(--chl-forest-black)">
+    <div style="max-width:1240px;margin:0 auto;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+      <span style="font:400 13px var(--font-brand);color:var(--chl-white-50)">ASX: CHL · Powered by Camplify Holdings</span>
+      <div style="display:flex;gap:24px">
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Privacy</a>
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Terms</a>
+        <a href="QA.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Contact IR</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const mk = (title, desc, next = false) => ({
+      title, desc, next,
+      bg: next ? 'var(--chl-alice-blue)' : 'var(--chl-white)',
+      dateBg: next ? 'var(--chl-reef-blue)' : 'var(--chl-questro-cream)',
+      dateColor: next ? 'var(--chl-forest-black)' : 'var(--chl-ink-60)',
+    });
+    return {
+      dates: [
+        mk('Half-year results', 'FY20XX interim results announcement and investor webinar.', true),
+        mk('Quarterly activities report (Q3)', 'Appendix 4C and quarterly business update.'),
+        mk('Full-year results', 'FY20XX annual results announcement and investor webinar.'),
+        mk('Annual report published', 'FY20XX annual report released to ASX and the hub.'),
+        mk('Annual General Meeting', 'AGM — notice of meeting, webcast link and voting details to follow.'),
+        mk('Quarterly activities report (Q1)', 'Appendix 4C and quarterly business update.'),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

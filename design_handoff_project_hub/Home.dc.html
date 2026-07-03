@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/base.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/styles.css">
+  <script src="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/_ds_bundle.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:var(--chl-white);font-family:var(--font-brand);color:var(--chl-forest-black)" data-screen-label="01 Home">
+
+  <!-- ============ TOP NAV ============ -->
+  <div style="position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--chl-gambier-grey)">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;gap:20px">
+      <a href="Home.dc.html" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/CHL-Group-Wide.svg" alt="CHL Group" style="height:30px;display:block"></a>
+      <span style="font:500 11px/1 var(--font-brand);letter-spacing:.14em;color:var(--chl-ink-40);text-transform:uppercase;border-left:1px solid var(--chl-gambier-grey);padding-left:16px">Investor hub</span>
+      <nav style="display:flex;gap:22px;align-items:center;margin-left:auto">
+        <a href="Home.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-forest-black);text-decoration:none;border-bottom:2px solid var(--chl-reef-blue);padding-bottom:2px">Home</a>
+        <a href="Why Invest.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Why invest</a>
+        <a href="About.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">About</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Announcements</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Research</a>
+        <a href="Webinars.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Webinars</a>
+        <a href="QA.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Q&amp;A</a>
+        <a href="Rewards.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Rewards</a>
+        <a href="Sign In.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="dark" size="sm" hint-size="90px,36px">Sign in</x-import></a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section style="background:var(--chl-white)">
+    <div style="max-width:1240px;margin:0 auto;padding:88px 32px 64px;display:flex;flex-direction:column;gap:24px">
+      <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Eyebrow" hint-size="120px,16px">ASX : CHL</x-import>
+      <h1 style="font:500 60px/1.25 var(--font-brand);letter-spacing:-0.01em;margin:0;max-width:820px">Invest in the future of <span style="color:var(--chl-reef-blue)">RV travel</span></h1>
+      <p style="font:400 20px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0;max-width:640px">Camplify Holdings (ASX: CHL) — connecting RV owners and travellers across 7 countries.</p>
+      <div style="display:flex;gap:16px;align-items:center">
+        <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="lg" on-click="{{ openSignup }}" hint-size="220px,52px">Get investor updates</x-import>
+        <a href="Announcement Detail.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="lg" hint-size="260px,52px">View latest announcement</x-import></a>
+      </div>
+    </div>
+    <!-- metric band -->
+    <div style="border-top:1px solid var(--chl-gambier-grey);border-bottom:1px solid var(--chl-gambier-grey);background:var(--chl-questro-cream)">
+      <div style="max-width:1240px;margin:0 auto;padding:36px 32px;display:flex;align-items:center;gap:40px">
+        <div style="display:flex;flex-direction:column;gap:6px;border-right:1px solid var(--chl-ink-15);padding-right:40px;flex-shrink:0">
+          <span style="font:500 12px/1 var(--font-brand);letter-spacing:.12em;text-transform:uppercase;color:var(--chl-ink-40)">Share price · live</span>
+          <span style="font:500 34px/1.2 var(--font-brand)">$X.XX <span style="font:500 14px var(--font-brand);color:var(--color-success)">▲ X.X%</span></span>
+          <span style="font:400 13px var(--font-brand);color:var(--chl-ink-40)">Live widget placeholder</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;flex:1">
+          <span style="font:500 12px/1 var(--font-brand);letter-spacing:.12em;text-transform:uppercase;color:var(--chl-ink-40)">Our brands</span>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
+            <span style="font:600 20px/1 var(--font-brand);color:var(--chl-forest-black)">Camplify</span>
+            <span style="font:600 20px/1 var(--font-brand);color:var(--chl-forest-black)">PaulCamper</span>
+            <span style="font:600 20px/1 var(--font-brand);color:var(--chl-forest-black)">MyWay</span>
+            <span style="font:600 20px/1 var(--font-brand);color:var(--chl-forest-black)">Club Camplify</span>
+            <span style="font:600 20px/1 var(--font-brand);color:var(--chl-forest-black)">Rent a Tent</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REWARDS BANNER ============ -->
+  <section style="max-width:1240px;margin:40px auto 0;padding:0 32px">
+    <div style="background:var(--chl-alice-blue);border:1px solid var(--chl-reef-tint-30);border-radius:20px;padding:28px 32px;display:flex;align-items:center;gap:28px">
+      <div style="width:56px;height:56px;border-radius:14px;background:var(--chl-reef-tint-15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--chl-reef-blue-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17h2v-5l-3-6H3a1 1 0 0 0-1 1v10h2"></path><circle cx="7" cy="17" r="2"></circle><circle cx="16" cy="17" r="2"></circle><path d="M9 17h5"></path><path d="M6 9h6"></path></svg>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:4px;flex:1">
+        <span style="font:600 18px/1.4 var(--font-brand)">Own CHL shares?</span>
+        <span style="font:400 15px/1.5 var(--font-brand);color:var(--chl-ink-60)">Get 10% off Camplify membership per van (500 shares per membership) or a $200 annual hiring credit.</span>
+      </div>
+      <a href="Rewards.dc.html" style="text-decoration:none;flex-shrink:0"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="md" hint-size="190px,44px">Check my eligibility</x-import></a>
+      <span style="color:var(--chl-ink-40);font:400 20px/1 var(--font-brand);cursor:pointer;flex-shrink:0">✕</span>
+    </div>
+  </section>
+
+  <!-- ============ LATEST CONTENT ============ -->
+  <section style="max-width:1240px;margin:0 auto;padding:64px 32px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:28px">
+      <h2 style="font:600 30px/1.4 var(--font-brand);margin:0">Latest from CHL</h2>
+      <a href="Announcements.dc.html" style="font:500 15px var(--font-brand);color:var(--chl-reef-blue-deep);text-decoration:none">View all →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+      <a href="Announcement Detail.dc.html" style="text-decoration:none;color:inherit;display:block">
+        <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" interactive="{{ true }}" hint-size="100%,260px">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;gap:10px;align-items:center">
+              <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Badge" tone="tint" hint-size="130px,24px">ASX Announcement</x-import>
+              <span style="font:400 13px var(--font-brand);color:var(--chl-ink-40)">DD Mon YYYY</span>
+            </div>
+            <span style="font:600 19px/1.4 var(--font-brand)">Latest ASX announcement headline goes here across two lines</span>
+            <span style="font:500 14px var(--font-brand);color:var(--chl-reef-blue-deep)">Read more →</span>
+          </div>
+        </x-import>
+      </a>
+      <a href="Sign In.dc.html" style="text-decoration:none;color:inherit;display:block">
+        <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" interactive="{{ true }}" padding="0" hint-size="100%,260px">
+          <div style="display:flex;flex-direction:column">
+            <div style="height:120px;background:var(--chl-questro-cream);border-radius:20px 20px 0 0;display:flex;align-items:center;justify-content:center;font:400 13px var(--font-brand);color:var(--chl-ink-40)">Article thumbnail</div>
+            <div style="padding:20px 24px 24px;display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;gap:10px;align-items:center">
+                <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Badge" tone="outline" hint-size="80px,24px">Research</x-import>
+                <span style="font:400 13px var(--font-brand);color:var(--chl-ink-40)">DD Mon YYYY</span>
+              </div>
+              <span style="font:600 17px/1.4 var(--font-brand)">SmallCaps research article headline placeholder</span>
+              <span style="display:inline-flex;align-items:center;gap:6px;font:500 12px var(--font-brand);color:var(--chl-reef-blue-deep);background:var(--chl-alice-blue);border:1px solid var(--chl-reef-tint-30);border-radius:100px;padding:3px 12px;align-self:flex-start">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Sign in to read
+              </span>
+            </div>
+          </div>
+        </x-import>
+      </a>
+      <a href="Webinars.dc.html" style="text-decoration:none;color:inherit;display:block">
+        <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" variant="tint" interactive="{{ true }}" hint-size="100%,260px">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;gap:10px;align-items:center">
+              <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Badge" tone="solid" dot="{{ true }}" hint-size="120px,24px">Next webinar</x-import>
+              <span style="font:400 13px var(--font-brand);color:var(--chl-ink-40)">DD Mon · H:MM pm AEST</span>
+            </div>
+            <span style="font:600 19px/1.4 var(--font-brand)">Quarterly investor webinar — title placeholder</span>
+            <span style="font:400 14px/1.5 var(--font-brand);color:var(--chl-ink-60)">With Justin Hales, CEO</span>
+            <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="sm" hint-size="140px,36px">Register now</x-import>
+          </div>
+        </x-import>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section style="background:var(--chl-questro-cream);border-top:1px solid var(--chl-gambier-grey)">
+    <div style="max-width:1240px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Eyebrow" hint-size="120px,16px">About CHL</x-import>
+        <h2 style="font:600 30px/1.4 var(--font-brand);margin:0">A global adventure-travel technology group</h2>
+        <p style="font:400 16px/1.65 var(--font-brand);color:var(--chl-ink-60);margin:0">Placeholder paragraph — CHL operates peer-to-peer RV-sharing marketplaces (Camplify, PaulCamper) and travel insurance (MyWay Mutual) across 7 markets. Two to three sentences of company narrative sit here.</p>
+        <a href="Announcement Detail.dc.html" style="font:500 15px var(--font-brand);color:var(--chl-reef-blue-deep);text-decoration:none">Read the full SmallCaps research report (PDF) →</a>
+      </div>
+      <div style="justify-self:end;width:100%;max-width:380px">
+        <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.MapShape" fill="var(--chl-bay-blue)" hint-size="100%,240px">
+          <div style="display:flex;align-items:center;justify-content:center;height:100%;font:500 14px var(--font-brand);color:var(--chl-forest-black)">Brand image placeholder</div>
+        </x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:var(--chl-forest-black)">
+    <div style="max-width:1240px;margin:0 auto;padding:48px 32px;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap">
+        <span style="font:400 14px var(--font-brand);color:var(--chl-white-75)">ASX: CHL &nbsp;|&nbsp; ABN XX XXX XXX XXX &nbsp;|&nbsp; Registered office: Newcastle NSW</span>
+        <div style="display:flex;gap:24px;flex-wrap:wrap">
+          <a href="Key Dates.dc.html" style="font:400 14px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Key dates</a>
+          <a href="AGMs.dc.html" style="font:400 14px var(--font-brand);color:var(--chl-white-50);text-decoration:none">AGMs</a>
+          <a href="Reports.dc.html" style="font:400 14px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Reports</a>
+          <a href="Governance.dc.html" style="font:400 14px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Governance</a>
+          <a href="Home.dc.html" style="font:400 14px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Privacy policy</a>
+          <a href="Home.dc.html" style="font:400 14px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Terms</a>
+          <a href="QA.dc.html" style="font:400 14px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Contact IR team</a>
+          <a href="Admin Dashboard.dc.html" style="font:400 14px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Admin console</a>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--chl-white-10);padding-top:20px;display:flex;justify-content:space-between;align-items:center">
+        <span style="font:400 13px var(--font-brand);color:var(--chl-white-50)">Powered by Camplify Holdings</span>
+        <span style="font:400 12px/1.6 var(--font-brand);color:var(--chl-white-50);max-width:520px;text-align:right">CHL was founded in Newcastle, NSW, on the traditional Country of the Awabakal and Worimi peoples.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SIGNUP MODAL ============ -->
+  <sc-if value="{{ showSignup }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;background:rgba(20,22,35,.5);z-index:100;display:flex;align-items:center;justify-content:center" onClick="{{ closeSignup }}">
+      <div style="background:var(--chl-white);border-radius:24px;padding:40px;width:460px;display:flex;flex-direction:column;gap:18px;box-shadow:0 20px 40px rgba(20,22,35,.2)" onClick="{{ stop }}">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <h3 style="font:600 24px/1.3 var(--font-brand);margin:0">Get investor updates</h3>
+          <span style="color:var(--chl-ink-40);font:400 20px/1 var(--font-brand);cursor:pointer" onClick="{{ closeSignup }}">✕</span>
+        </div>
+        <p style="font:400 15px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0">ASX announcements, research and webinar invites — straight to your inbox.</p>
+        <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.TextField" label="Email address" placeholder="you@email.com" hint-size="100%,72px"></x-import>
+        <a href="Sign In.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="md" style="width:100%" hint-size="100%,44px">Sign me up</x-import></a>
+        <span style="font:400 12px var(--font-brand);color:var(--chl-ink-40);text-align:center">Dismissable — won't reappear for 7 days</span>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { showSignup: false };
+  renderVals() {
+    return {
+      showSignup: this.state.showSignup,
+      openSignup: () => this.setState({ showSignup: true }),
+      closeSignup: () => this.setState({ showSignup: false }),
+      stop: (e) => e.stopPropagation(),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/base.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/styles.css">
+  <script src="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/_ds_bundle.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:var(--chl-questro-cream);font-family:var(--font-brand);color:var(--chl-forest-black)" data-screen-label="23 Management team">
+
+  <!-- ============ TOP NAV ============ -->
+  <div style="position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--chl-gambier-grey)">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;gap:20px">
+      <a href="Home.dc.html" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/CHL-Group-Wide.svg" alt="CHL Group" style="height:30px;display:block"></a>
+      <span style="font:500 11px/1 var(--font-brand);letter-spacing:.14em;color:var(--chl-ink-40);text-transform:uppercase;border-left:1px solid var(--chl-gambier-grey);padding-left:16px">Investor hub</span>
+      <nav style="display:flex;gap:22px;align-items:center;margin-left:auto">
+        <a href="Home.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Home</a>
+        <a href="Why Invest.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Why invest</a>
+        <a href="About.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-forest-black);text-decoration:none;border-bottom:2px solid var(--chl-reef-blue);padding-bottom:2px">About</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Announcements</a>
+        <a href="Webinars.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Webinars</a>
+        <a href="QA.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Q&amp;A</a>
+        <a href="Rewards.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Rewards</a>
+        <a href="Sign In.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="dark" size="sm" hint-size="90px,36px">Sign in</x-import></a>
+      </nav>
+    </div>
+  </div>
+
+  <div style="max-width:1100px;margin:0 auto;padding:56px 32px 80px;display:flex;flex-direction:column;gap:32px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Eyebrow" hint-size="120px,16px">About CHL</x-import>
+      <h1 style="font:500 44px/1.25 var(--font-brand);letter-spacing:-0.01em;margin:0">Management team</h1>
+      <p style="font:400 16px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0;max-width:600px">Placeholder bios — the executive team leading CHL's marketplaces and insurance division day to day.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+      <sc-for list="{{ execs }}" as="e" hint-placeholder-count="6">
+        <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" padding="28px" hint-size="100%,230px">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Avatar" name="{{ e.name }}" size="56" hint-size="56px,56px"></x-import>
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span style="font:600 18px/1.35 var(--font-brand)">{{ e.name }}</span>
+              <span style="font:500 13px var(--font-brand);color:var(--chl-reef-blue-deep)">{{ e.role }}</span>
+            </div>
+            <p style="font:400 14px/1.55 var(--font-brand);color:var(--chl-ink-60);margin:0">One-line bio placeholder — background, prior roles and remit.</p>
+          </div>
+        </x-import>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;gap:16px">
+      <a href="About.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="sm" hint-size="180px,36px">Board of directors →</x-import></a>
+      <a href="Governance.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="sm" hint-size="210px,36px">Corporate governance →</x-import></a>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:var(--chl-forest-black)">
+    <div style="max-width:1240px;margin:0 auto;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+      <span style="font:400 13px var(--font-brand);color:var(--chl-white-50)">ASX: CHL · Powered by Camplify Holdings</span>
+      <div style="display:flex;gap:24px">
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Privacy</a>
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Terms</a>
+        <a href="QA.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Contact IR</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      execs: [
+        { name: 'Justin Hales', role: 'CEO & Founder' },
+        { name: 'Exec Name', role: 'Chief Financial Officer' },
+        { name: 'Exec Name', role: 'Chief Technology Officer' },
+        { name: 'Exec Name', role: 'CEO, PaulCamper' },
+        { name: 'Exec Name', role: 'Managing Director, MyWay' },
+        { name: 'Exec Name', role: 'Chief Marketing Officer' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

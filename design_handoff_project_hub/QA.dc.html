@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/base.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/styles.css">
+  <script src="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/_ds_bundle.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:var(--chl-questro-cream);font-family:var(--font-brand);color:var(--chl-forest-black)" data-screen-label="06 Investor Q&amp;A">
+
+  <!-- ============ TOP NAV ============ -->
+  <div style="position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--chl-gambier-grey)">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;gap:20px">
+      <a href="Home.dc.html" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/CHL-Group-Wide.svg" alt="CHL Group" style="height:30px;display:block"></a>
+      <span style="font:500 11px/1 var(--font-brand);letter-spacing:.14em;color:var(--chl-ink-40);text-transform:uppercase;border-left:1px solid var(--chl-gambier-grey);padding-left:16px">Investor hub</span>
+      <nav style="display:flex;gap:22px;align-items:center;margin-left:auto">
+        <a href="Home.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Home</a>
+        <a href="Why Invest.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Why invest</a>
+        <a href="About.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">About</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Announcements</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Research</a>
+        <a href="Webinars.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Webinars</a>
+        <a href="QA.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-forest-black);text-decoration:none;border-bottom:2px solid var(--chl-reef-blue);padding-bottom:2px">Q&amp;A</a>
+        <a href="Rewards.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Rewards</a>
+        <a href="Sign In.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="dark" size="sm" hint-size="90px,36px">Sign in</x-import></a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ============ SIGN-IN GATE ============ -->
+  <sc-if value="{{ gated }}" hint-placeholder-val="{{ true }}">
+    <div style="position:fixed;inset:0;top:72px;z-index:30;background:rgba(246,245,244,.6);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:32px">
+      <div style="background:var(--chl-white);border:1px solid var(--chl-gambier-grey);border-radius:24px;padding:44px;width:440px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;box-shadow:0 20px 40px rgba(20,22,35,.12)">
+        <div style="width:56px;height:56px;border-radius:50%;background:var(--chl-reef-tint-15);display:flex;align-items:center;justify-content:center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--chl-reef-blue-deep)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <span style="font:600 24px/1.35 var(--font-brand)">Investor Q&amp;A is for registered investors</span>
+        <p style="font:400 15px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0">Sign in to read answers from the CHL team and ask your own questions.</p>
+        <a href="Sign In.dc.html" style="text-decoration:none;width:100%"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="md" style="width:100%" hint-size="100%,44px">Sign in or create account</x-import></a>
+        <span style="font:400 13px var(--font-brand);color:var(--chl-ink-40);cursor:pointer;text-decoration:underline" onClick="{{ unlock }}">Prototype: preview as signed-in investor</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="max-width:900px;margin:0 auto;padding:48px 32px 72px;display:flex;flex-direction:column;gap:32px">
+    <h1 style="font:500 42px/1.25 var(--font-brand);letter-spacing:-0.01em;margin:0">Investor Q&amp;A</h1>
+
+    <!-- ============ ASK A QUESTION ============ -->
+    <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" hint-size="100%,260px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span style="font:600 20px/1.4 var(--font-brand)">Ask the CHL team a question</span>
+        <textarea placeholder="Type your question here…" style="font:400 15px/1.6 var(--font-brand);color:var(--chl-forest-black);border:1px solid var(--chl-gambier-grey);border-radius:14px;padding:14px 18px;min-height:96px;resize:vertical;outline:none;background:var(--chl-white)"></textarea>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+          <div style="display:flex;gap:20px;align-items:center">
+            <label style="display:flex;gap:8px;align-items:center;font:400 14px var(--font-brand);color:var(--chl-ink-60);cursor:pointer"><input type="checkbox" checked style="accent-color:var(--chl-reef-blue)"> Post publicly</label>
+            <label style="display:flex;gap:8px;align-items:center;font:400 14px var(--font-brand);color:var(--chl-ink-60);cursor:pointer"><input type="checkbox" style="accent-color:var(--chl-reef-blue)"> Private question</label>
+          </div>
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="md" hint-size="170px,44px">Submit question</x-import>
+        </div>
+        <span style="font:400 13px var(--font-brand);color:var(--chl-ink-40)">Questions are reviewed before publishing. We aim to respond within 5 business days.</span>
+      </div>
+    </x-import>
+
+    <!-- ============ FILTER + LIST ============ -->
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Tabs" tabs="{{ filterTabs }}" value="{{ activeTab }}" on-change="{{ setTab }}" hint-size="320px,44px"></x-import>
+
+      <sc-for list="{{ questions }}" as="q" hint-placeholder-count="4">
+        <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" padding="24px 28px" hint-size="100%,160px">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;gap:12px;align-items:center">
+              <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Avatar" name="{{ q.name }}" size="36" hint-size="36px,36px"></x-import>
+              <div style="display:flex;flex-direction:column">
+                <span style="font:500 15px var(--font-brand)">{{ q.name }}</span>
+                <span style="font:400 12px var(--font-brand);color:var(--chl-ink-40)">DD Mon YYYY</span>
+              </div>
+              <div style="margin-left:auto">
+                <sc-if value="{{ q.answered }}" hint-placeholder-val="{{ true }}">
+                  <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Badge" tone="success" hint-size="90px,24px">Answered</x-import>
+                </sc-if>
+                <sc-if value="{{ q.pending }}" hint-placeholder-val="{{ false }}">
+                  <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Badge" tone="warning" hint-size="120px,24px">Pending answer</x-import>
+                </sc-if>
+              </div>
+            </div>
+            <p style="font:500 17px/1.5 var(--font-brand);margin:0">{{ q.question }}</p>
+            <sc-if value="{{ q.answered }}" hint-placeholder-val="{{ false }}">
+              <div style="background:var(--chl-alice-blue);border-left:3px solid var(--chl-reef-blue);border-radius:0 14px 14px 0;padding:16px 20px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;gap:8px;align-items:center">
+                  <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Badge" tone="tint" hint-size="170px,22px">Answered by CHL team</x-import>
+                </div>
+                <p style="font:400 15px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0">Answer placeholder — a plain-English response from the IR team, two to three sentences long, addressing the investor's question directly.</p>
+              </div>
+            </sc-if>
+          </div>
+        </x-import>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:var(--chl-forest-black)">
+    <div style="max-width:1240px;margin:0 auto;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+      <span style="font:400 13px var(--font-brand);color:var(--chl-white-50)">ASX: CHL · Powered by Camplify Holdings</span>
+      <div style="display:flex;gap:24px">
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Privacy</a>
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Terms</a>
+        <a href="QA.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Contact IR</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { activeTab: 'all', gated: !window.location.hash.includes('signedin') };
+  renderVals() {
+    const all = [
+      { name: 'Investor Name', question: 'Question text placeholder — how does the company think about X over the next 12 months?', answered: true },
+      { name: 'Anonymous', question: 'Question text placeholder about the MyWay insurance division and its contribution?', answered: true },
+      { name: 'Investor Name', question: 'Question text placeholder — unanswered question awaiting a response from the team?', answered: false },
+      { name: 'Anonymous', question: 'Another answered question placeholder about market expansion plans?', answered: true },
+    ];
+    const tab = this.state.activeTab;
+    const filtered = tab === 'all' ? all : all.filter((q) => (tab === 'answered' ? q.answered : !q.answered));
+    return {
+      gated: this.state.gated,
+      unlock: () => this.setState({ gated: false }),
+      filterTabs: [
+        { id: 'all', label: 'All' },
+        { id: 'answered', label: 'Answered' },
+        { id: 'unanswered', label: 'Unanswered' },
+      ],
+      activeTab: tab,
+      setTab: (id) => this.setState({ activeTab: id }),
+      questions: filtered.map((q) => ({ ...q, pending: !q.answered })),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/base.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/styles.css">
+  <script src="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/_ds_bundle.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:var(--chl-white);font-family:var(--font-brand);color:var(--chl-forest-black)" data-screen-label="22 Corporate governance">
+
+  <!-- ============ TOP NAV ============ -->
+  <div style="position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--chl-gambier-grey)">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;gap:20px">
+      <a href="Home.dc.html" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/CHL-Group-Wide.svg" alt="CHL Group" style="height:30px;display:block"></a>
+      <span style="font:500 11px/1 var(--font-brand);letter-spacing:.14em;color:var(--chl-ink-40);text-transform:uppercase;border-left:1px solid var(--chl-gambier-grey);padding-left:16px">Investor hub</span>
+      <nav style="display:flex;gap:22px;align-items:center;margin-left:auto">
+        <a href="Home.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Home</a>
+        <a href="Why Invest.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Why invest</a>
+        <a href="About.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-forest-black);text-decoration:none;border-bottom:2px solid var(--chl-reef-blue);padding-bottom:2px">About</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Announcements</a>
+        <a href="Webinars.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Webinars</a>
+        <a href="QA.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Q&amp;A</a>
+        <a href="Rewards.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Rewards</a>
+        <a href="Sign In.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="dark" size="sm" hint-size="90px,36px">Sign in</x-import></a>
+      </nav>
+    </div>
+  </div>
+
+  <div style="max-width:1000px;margin:0 auto;padding:56px 32px 80px;display:flex;flex-direction:column;gap:36px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Eyebrow" hint-size="120px,16px">About CHL</x-import>
+      <h1 style="font:500 44px/1.25 var(--font-brand);letter-spacing:-0.01em;margin:0">Corporate governance</h1>
+      <p style="font:400 16px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0;max-width:640px">Placeholder paragraph — CHL's approach to governance, accountability and risk. The documents below set out the framework the board operates under.</p>
+    </div>
+
+    <!-- committees -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+      <sc-for list="{{ committees }}" as="c" hint-placeholder-count="3">
+        <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" variant="cream" padding="24px" hint-size="100%,170px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font:600 17px/1.35 var(--font-brand)">{{ c.name }}</span>
+            <span style="font:400 13px/1.55 var(--font-brand);color:var(--chl-ink-60)">{{ c.desc }}</span>
+            <span style="font:400 12px var(--font-brand);color:var(--chl-ink-40)">Chair: Director Name</span>
+          </div>
+        </x-import>
+      </sc-for>
+    </div>
+
+    <!-- documents -->
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <h2 style="font:600 24px/1.4 var(--font-brand);margin:0">Charters &amp; policies</h2>
+      <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" padding="0" hint-size="100%,360px">
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ docs }}" as="d" hint-placeholder-count="7">
+            <div style="display:flex;align-items:center;gap:16px;padding:16px 28px;border-bottom:1px solid var(--chl-ink-15)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--chl-reef-blue-deep)" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
+              <span style="font:500 15px var(--font-brand);flex:1">{{ d }}</span>
+              <span style="font:400 13px var(--font-brand);color:var(--chl-ink-40)">PDF</span>
+              <span style="font:500 13px var(--font-brand);color:var(--chl-reef-blue-deep);cursor:pointer">Download ↓</span>
+            </div>
+          </sc-for>
+        </div>
+      </x-import>
+    </div>
+
+    <div style="display:flex;gap:16px">
+      <a href="About.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="sm" hint-size="180px,36px">Board of directors →</x-import></a>
+      <a href="Management.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="sm" hint-size="190px,36px">Management team →</x-import></a>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:var(--chl-forest-black)">
+    <div style="max-width:1240px;margin:0 auto;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+      <span style="font:400 13px var(--font-brand);color:var(--chl-white-50)">ASX: CHL · Powered by Camplify Holdings</span>
+      <div style="display:flex;gap:24px">
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Privacy</a>
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Terms</a>
+        <a href="QA.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Contact IR</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      committees: [
+        { name: 'Audit & Risk Committee', desc: 'Oversees financial reporting, audit and risk management placeholder.' },
+        { name: 'Remuneration & Nomination', desc: 'Oversees remuneration policy and board composition placeholder.' },
+        { name: 'Technology & Security', desc: 'Oversees platform, data and cyber-security matters placeholder.' },
+      ],
+      docs: [
+        'Board charter',
+        'Audit & risk committee charter',
+        'Remuneration & nomination committee charter',
+        'Code of conduct',
+        'Securities trading policy',
+        'Continuous disclosure policy',
+        'Whistleblower policy',
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

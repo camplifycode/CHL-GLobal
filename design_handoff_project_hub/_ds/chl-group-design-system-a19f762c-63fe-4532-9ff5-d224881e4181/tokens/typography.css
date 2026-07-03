@@ -1,0 +1,54 @@
+/* ============================================================
+   CHL GROUP · TYPOGRAPHY TOKENS
+   Typeface: Poppins. Scale taken directly from Brand Guidelines 2023.
+     Display  84px / 120% / Medium 500
+     Headline 60px / 130% / Medium 500
+     Title    30px / 140% / SemiBold 600
+     Body     18px / 140% / Regular 400
+     Label    16px / 140% / Medium 500
+   Big, bold, confident headings; calm, readable body.
+   ============================================================ */
+
+:root {
+  --font-brand: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-sans:  var(--font-brand);
+
+  /* ---- Weights ---- */
+  --fw-light:    300; /* @kind other */
+  --fw-regular:  400; /* @kind other */
+  --fw-medium:   500; /* @kind other */
+  --fw-semibold: 600; /* @kind other */
+  --fw-bold:     700; /* @kind other */
+
+  /* ---- Type scale (px) ---- */
+  --fs-display:  84px;
+  --fs-headline: 60px;
+  --fs-title:    30px;
+  --fs-subtitle: 22px;
+  --fs-body-lg:  20px;
+  --fs-body:     18px;
+  --fs-label:    16px;
+  --fs-caption:  14px;
+  --fs-micro:    12px;
+
+  /* ---- Line heights ---- */
+  --lh-display:  1.2;   /* @kind other */
+  --lh-heading:  1.3;   /* @kind other */
+  --lh-title:    1.4;   /* @kind other */
+  --lh-body:     1.65;  /* @kind other */
+  --lh-tight:    1.15;  /* @kind other */
+
+  /* ---- Letter spacing ---- */
+  --ls-display:  -0.02em;  /* @kind other */
+  --ls-heading:  -0.01em;  /* @kind other */
+  --ls-normal:   0;        /* @kind other */
+  --ls-label:    0.01em;   /* @kind other */
+  --ls-eyebrow:  0.14em;   /* @kind other */
+
+  /* ---- Composite roles ---- */
+  --text-display:  var(--fw-medium)   var(--fs-display)/var(--lh-display) var(--font-brand);
+  --text-headline: var(--fw-medium)   var(--fs-headline)/var(--lh-heading) var(--font-brand);
+  --text-title:    var(--fw-semibold) var(--fs-title)/var(--lh-title) var(--font-brand);
+  --text-body:     var(--fw-regular)  var(--fs-body)/var(--lh-body) var(--font-brand);
+  --text-label:    var(--fw-medium)   var(--fs-label)/var(--lh-title) var(--font-brand);
+}

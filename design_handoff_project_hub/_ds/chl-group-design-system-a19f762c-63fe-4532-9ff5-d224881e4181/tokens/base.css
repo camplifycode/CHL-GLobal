@@ -1,0 +1,60 @@
+/* ============================================================
+   CHL GROUP · BASE / RESET & PRIMITIVE HELPERS
+   Lightweight normalize + brand defaults. Optional to consumers,
+   but establishes the default typographic voice.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-brand);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-ink);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Brand type roles (utility classes) ---- */
+.chl-display {
+  font: var(--fw-medium) var(--fs-display)/var(--lh-display) var(--font-brand);
+  letter-spacing: var(--ls-display);
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+.chl-headline {
+  font: var(--fw-medium) var(--fs-headline)/var(--lh-heading) var(--font-brand);
+  letter-spacing: var(--ls-heading);
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+.chl-title {
+  font: var(--fw-semibold) var(--fs-title)/var(--lh-title) var(--font-brand);
+  letter-spacing: var(--ls-heading);
+  color: var(--color-ink);
+}
+.chl-body {
+  font: var(--fw-regular) var(--fs-body)/var(--lh-body) var(--font-brand);
+  color: var(--color-ink);
+}
+.chl-label {
+  font: var(--fw-medium) var(--fs-label)/var(--lh-title) var(--font-brand);
+  color: var(--color-ink);
+}
+/* Eyebrow: small uppercase teal kicker seen throughout the brand */
+.chl-eyebrow {
+  font: var(--fw-semibold) var(--fs-micro)/1.4 var(--font-brand);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+/* Teal emphasis inside a heading — brand pattern of highlighting one word */
+.chl-accent { color: var(--color-brand); font-style: normal; }
+
+a { color: var(--color-brand); text-decoration: none; }
+a:hover { color: var(--chl-reef-blue-deep); }
+
+::selection { background: var(--chl-bay-blue); color: var(--color-ink); }

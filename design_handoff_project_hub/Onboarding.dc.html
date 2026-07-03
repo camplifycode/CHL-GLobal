@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/base.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/styles.css">
+  <script src="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/_ds_bundle.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:var(--chl-questro-cream);font-family:var(--font-brand);color:var(--chl-forest-black);display:flex;flex-direction:column" data-screen-label="17 Onboarding">
+
+  <!-- minimal header -->
+  <div style="background:var(--chl-white);border-bottom:1px solid var(--chl-gambier-grey);padding:20px 32px;display:flex;justify-content:center">
+    <img src="assets/CHL-Group-Wide.svg" alt="CHL Group" style="height:30px;display:block">
+  </div>
+
+  <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:56px 32px">
+    <div style="width:520px;display:flex;flex-direction:column;gap:24px">
+
+      <!-- progress -->
+      <div style="display:flex;gap:8px;justify-content:center">
+        <span style="width:40px;height:4px;border-radius:100px;background:var(--chl-reef-blue)"></span>
+        <span style="width:40px;height:4px;border-radius:100px;background:{{ step2bar }}"></span>
+      </div>
+
+      <!-- STEP 1: welcome + username -->
+      <sc-if value="{{ is1 }}" hint-placeholder-val="{{ true }}">
+        <div style="background:var(--chl-white);border:1px solid var(--chl-gambier-grey);border-radius:24px;padding:44px;display:flex;flex-direction:column;gap:20px;box-shadow:0 20px 40px rgba(20,22,35,.08)">
+          <h1 style="font:500 34px/1.25 var(--font-brand);letter-spacing:-0.01em;margin:0">Welcome to the <span style="color:var(--chl-reef-blue)">hub</span></h1>
+          <p style="font:400 15px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0">Hi <strong style="color:var(--chl-forest-black)">Investor Name</strong> — what username would you like to be known as when you engage with the CHL team and other investors?</p>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.TextField" label="Username" placeholder="username" shape="rounded" hint="Your username is publicly visible and cannot be changed." hint-size="100%,92px"></x-import>
+          </div>
+          <label style="display:flex;gap:10px;align-items:flex-start;font:400 14px/1.5 var(--font-brand);color:var(--chl-ink-60);cursor:pointer"><input type="checkbox" checked style="accent-color:var(--chl-reef-blue);margin-top:2px"> I want to receive news and updates from CHL Group by email</label>
+          <label style="display:flex;gap:10px;align-items:flex-start;font:400 14px/1.5 var(--font-brand);color:var(--chl-ink-60);cursor:pointer"><input type="checkbox" style="accent-color:var(--chl-reef-blue);margin-top:2px"><span>Yes, I am over 18 years old, I agree to the <a href="Home.dc.html" style="color:var(--chl-reef-blue-deep)">terms and conditions</a>, and I have read the <a href="Home.dc.html" style="color:var(--chl-reef-blue-deep)">privacy policy</a> *</span></label>
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="md" style="width:100%" on-click="{{ go2 }}" hint-size="100%,44px">Continue</x-import>
+        </div>
+      </sc-if>
+
+      <!-- STEP 2: investor declaration -->
+      <sc-if value="{{ is2 }}" hint-placeholder-val="{{ false }}">
+        <div style="background:var(--chl-white);border:1px solid var(--chl-gambier-grey);border-radius:24px;padding:44px;display:flex;flex-direction:column;gap:20px;box-shadow:0 20px 40px rgba(20,22,35,.08)">
+          <h1 style="font:500 30px/1.3 var(--font-brand);letter-spacing:-0.01em;margin:0">Finish account setup</h1>
+          <p style="font:400 15px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0">Let us know if you're a shareholder and/or a qualified investor to unlock shareholder rewards and be the first to know about upcoming raises. <strong style="color:var(--chl-forest-black)">Otherwise you can leave these blank.</strong></p>
+          <label style="display:flex;gap:12px;align-items:flex-start;border:1px solid var(--chl-reef-tint-30);background:var(--chl-alice-blue);border-radius:14px;padding:16px 18px;cursor:pointer">
+            <input type="checkbox" checked style="accent-color:var(--chl-reef-blue);margin-top:3px">
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span style="font:500 15px var(--font-brand)">I am a CHL shareholder</span>
+              <span style="font:400 13px/1.5 var(--font-brand);color:var(--chl-ink-60)">We'll verify your holding so your rewards activate automatically.</span>
+            </div>
+          </label>
+          <label style="display:flex;gap:12px;align-items:flex-start;border:1px solid var(--chl-gambier-grey);border-radius:14px;padding:16px 18px;cursor:pointer;background:var(--chl-white)">
+            <input type="checkbox" style="accent-color:var(--chl-reef-blue);margin-top:3px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="font:500 15px var(--font-brand)">I am a qualified investor, which includes:</span>
+              <span style="font:400 13px/1.6 var(--font-brand);color:var(--chl-ink-60)">· Sophisticated investor (s708) ⓘ<br>· Professional investor ⓘ</span>
+            </div>
+          </label>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a href="Home Signed In.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="md" style="width:100%" hint-size="100%,44px">Submit</x-import></a>
+            <a href="Home Signed In.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="md" style="width:100%" hint-size="100%,44px">Skip</x-import></a>
+          </div>
+          <span style="font:400 13px var(--font-brand);color:var(--chl-ink-40);text-align:center;cursor:pointer" onClick="{{ go1 }}">← Back</span>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { step: 1 };
+  renderVals() {
+    return {
+      is1: this.state.step === 1,
+      is2: this.state.step === 2,
+      step2bar: this.state.step === 2 ? 'var(--chl-reef-blue)' : 'var(--chl-gambier-grey)',
+      go1: () => this.setState({ step: 1 }),
+      go2: () => this.setState({ step: 2 }),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/base.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/styles.css">
+  <script src="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/_ds_bundle.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:var(--chl-questro-cream);font-family:var(--font-brand);color:var(--chl-forest-black);display:flex;flex-direction:column" data-screen-label="05 Webinar registration">
+
+  <!-- ============ TOP NAV ============ -->
+  <div style="position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--chl-gambier-grey)">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;gap:20px;width:100%">
+      <a href="Home.dc.html" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/CHL-Group-Wide.svg" alt="CHL Group" style="height:30px;display:block"></a>
+      <span style="font:500 11px/1 var(--font-brand);letter-spacing:.14em;color:var(--chl-ink-40);text-transform:uppercase;border-left:1px solid var(--chl-gambier-grey);padding-left:16px">Investor hub</span>
+      <nav style="display:flex;gap:22px;align-items:center;margin-left:auto">
+        <a href="Home Signed In.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Home</a>
+        <a href="Why Invest.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Why invest</a>
+        <a href="About.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">About</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Announcements</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Research</a>
+        <a href="Webinars.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-forest-black);text-decoration:none;border-bottom:2px solid var(--chl-reef-blue);padding-bottom:2px">Webinars</a>
+        <a href="QA.dc.html#signedin" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Q&amp;A</a>
+        <a href="Rewards.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Rewards</a>
+        <a href="My Account.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="dark" size="sm" hint-size="110px,36px">My account</x-import></a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ============ SIGNED-IN SUB MENU ============ -->
+  <div style="background:var(--chl-forest-black)">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:46px;display:flex;align-items:center;gap:26px">
+      <span style="font:500 11px/1 var(--font-brand);letter-spacing:.12em;text-transform:uppercase;color:var(--chl-white-50);flex-shrink:0">My hub</span>
+      <a href="Home Signed In.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">Overview</a>
+      <a href="My Account.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">My account</a>
+      <a href="Account Settings.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">Account settings</a>
+      <a href="Pricing Data.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">Pricing data</a>
+      <a href="Key Dates.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">Key dates</a>
+      <a href="AGMs.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">AGMs</a>
+      <a href="Reports.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">Reports</a>
+      <a href="https://portal.automic.com.au/investor/home" target="_blank" style="font:500 13px var(--font-brand);color:var(--chl-bay-blue);text-decoration:none;margin-left:auto">Automic portal ↗</a>
+    </div>
+  </div>
+
+  <!-- ============ CONFIRMATION ============ -->
+  <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:64px 32px">
+    <div style="background:var(--chl-white);border:1px solid var(--chl-gambier-grey);border-radius:24px;padding:48px;width:560px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;box-shadow:0 20px 40px rgba(20,22,35,.08)">
+      <div style="width:64px;height:64px;border-radius:50%;background:var(--chl-reef-tint-15);display:flex;align-items:center;justify-content:center">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--chl-reef-blue-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+      </div>
+      <h1 style="font:600 28px/1.35 var(--font-brand);margin:0">You're registered for<br>[Quarterly investor webinar]</h1>
+      <p style="font:400 16px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0">You'll receive your Zoom join link by email on <strong style="color:var(--chl-forest-black)">DD Month YYYY</strong>.</p>
+
+      <div style="background:var(--chl-questro-cream);border-radius:14px;padding:16px 24px;display:flex;align-items:center;gap:16px;width:100%;justify-content:center">
+        <span style="font:500 14px var(--font-brand);color:var(--chl-ink-60)">DD Month YYYY · H:MM pm AEST · XX minutes</span>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px;width:100%">
+        <span style="font:500 13px var(--font-brand);color:var(--chl-ink-40)">Add to calendar</span>
+        <div style="display:flex;gap:10px;justify-content:center">
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="sm" hint-size="120px,36px">Google Cal</x-import>
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="sm" hint-size="100px,36px">Outlook</x-import>
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="sm" hint-size="80px,36px">iCal</x-import>
+        </div>
+      </div>
+
+      <a href="Webinars.dc.html" style="font:500 15px var(--font-brand);color:var(--chl-reef-blue-deep);text-decoration:none">← Back to webinars</a>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:var(--chl-forest-black)">
+    <div style="max-width:1240px;margin:0 auto;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+      <span style="font:400 13px var(--font-brand);color:var(--chl-white-50)">ASX: CHL · Powered by Camplify Holdings</span>
+      <div style="display:flex;gap:24px">
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Privacy</a>
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Terms</a>
+        <a href="QA.dc.html#signedin" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Contact IR</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

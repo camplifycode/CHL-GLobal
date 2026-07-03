@@ -1,0 +1,33 @@
+/* ============================================================
+   CHL GROUP · SPACING & LAYOUT TOKENS
+   4px base grid; generous, airy section rhythm.
+   ============================================================ */
+
+:root {
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+
+  /* Semantic spacing */
+  --gap-inline:      8px;   /* between buttons / chips */
+  --gap-stack:       16px;  /* between related blocks */
+  --gap-group:       24px;  /* between cards in a grid */
+  --pad-card:        28px;  /* interior padding of a card */
+  --pad-section-y:   80px;  /* vertical section padding */
+  --pad-section-x:   60px;  /* horizontal section padding */
+
+  /* Layout */
+  --container-max:   1440px;  /* desktop design width */
+  --content-max:     720px;   /* readable measure */
+}

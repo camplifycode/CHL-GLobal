@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/base.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/styles.css">
+  <script src="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/_ds_bundle.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:var(--chl-white);font-family:var(--font-brand);color:var(--chl-forest-black)" data-screen-label="03 Announcement detail">
+
+  <!-- ============ TOP NAV ============ -->
+  <div style="position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--chl-gambier-grey)">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;gap:20px">
+      <a href="Home.dc.html" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/CHL-Group-Wide.svg" alt="CHL Group" style="height:30px;display:block"></a>
+      <span style="font:500 11px/1 var(--font-brand);letter-spacing:.14em;color:var(--chl-ink-40);text-transform:uppercase;border-left:1px solid var(--chl-gambier-grey);padding-left:16px">Investor hub</span>
+      <nav style="display:flex;gap:22px;align-items:center;margin-left:auto">
+        <a href="Home.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Home</a>
+        <a href="Why Invest.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Why invest</a>
+        <a href="About.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">About</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-forest-black);text-decoration:none;border-bottom:2px solid var(--chl-reef-blue);padding-bottom:2px">Announcements</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Research</a>
+        <a href="Webinars.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Webinars</a>
+        <a href="QA.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Q&amp;A</a>
+        <a href="Rewards.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Rewards</a>
+        <a href="Sign In.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="dark" size="sm" hint-size="90px,36px">Sign in</x-import></a>
+      </nav>
+    </div>
+  </div>
+
+  <div style="max-width:1240px;margin:0 auto;padding:40px 32px 72px;display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start">
+
+    <!-- ============ MAIN ============ -->
+    <article style="display:flex;flex-direction:column;gap:28px">
+      <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-40);text-decoration:none">← All announcements</a>
+
+      <!-- header -->
+      <header style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Badge" tone="tint" hint-size="130px,24px">ASX Announcement</x-import>
+          <span style="font:400 14px var(--font-brand);color:var(--chl-ink-40)">DD Mon YYYY</span>
+        </div>
+        <h1 style="font:500 40px/1.3 var(--font-brand);letter-spacing:-0.01em;margin:0">Announcement headline placeholder — spans one or two lines at this width</h1>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+          <span style="font:400 15px var(--font-brand);color:var(--chl-ink-60)">ASX announcement · Camplify Holdings Limited</span>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span style="font:400 13px var(--font-brand);color:var(--chl-ink-40)">Share:</span>
+            <span style="width:34px;height:34px;border:1px solid var(--chl-gambier-grey);border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px var(--font-brand);color:var(--chl-ink-60);cursor:pointer">in</span>
+            <span style="width:34px;height:34px;border:1px solid var(--chl-gambier-grey);border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 12px var(--font-brand);color:var(--chl-ink-60);cursor:pointer">𝕏</span>
+            <span style="width:34px;height:34px;border:1px solid var(--chl-gambier-grey);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--chl-ink-60)" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></span>
+          </div>
+        </div>
+      </header>
+
+      <!-- video -->
+      <div style="aspect-ratio:16/9;background:var(--chl-forest-black);border-radius:20px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--chl-white);display:flex;align-items:center;justify-content:center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--chl-forest-black)"><path d="M8 5v14l11-7z"></path></svg>
+        </div>
+        <span style="font:400 13px var(--font-brand);color:var(--chl-white-50)">Embedded video player (if attached) · 16:9</span>
+      </div>
+
+      <!-- summary callout -->
+      <div style="background:var(--chl-alice-blue);border:1px solid var(--chl-reef-tint-30);border-radius:16px;padding:24px 28px;display:flex;flex-direction:column;gap:8px">
+        <span style="font:500 12px/1 var(--font-brand);letter-spacing:.12em;text-transform:uppercase;color:var(--chl-reef-blue-deep)">Summary from the CHL team</span>
+        <p style="font:400 16px/1.65 var(--font-brand);margin:0;color:var(--chl-forest-black)">Admin-written context placeholder — two or three plain-English sentences explaining what this announcement means for investors, written by the IR team.</p>
+      </div>
+
+      <!-- body -->
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:720px">
+        <p style="font:400 16px/1.65 var(--font-brand);color:var(--chl-ink-60);margin:0">Full announcement body — rich text placeholder. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p style="font:400 16px/1.65 var(--font-brand);color:var(--chl-ink-60);margin:0">Second paragraph placeholder. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p style="font:400 16px/1.65 var(--font-brand);color:var(--chl-ink-60);margin:0">Third paragraph placeholder. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </div>
+
+      <!-- attachments -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font:600 16px var(--font-brand)">Attached files</span>
+        <sc-for list="{{ files }}" as="f" hint-placeholder-count="2">
+          <div style="display:flex;align-items:center;gap:14px;border:1px solid var(--chl-gambier-grey);border-radius:12px;padding:14px 18px;max-width:520px">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--chl-reef-blue-deep)" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
+            <span style="font:500 15px var(--font-brand);flex:1">{{ f.name }}</span>
+            <span style="font:400 13px var(--font-brand);color:var(--chl-ink-40)">{{ f.size }}</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--chl-ink-60)" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- bottom CTA -->
+      <div style="background:var(--chl-questro-cream);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:16px;margin-top:12px">
+        <span style="font:600 20px/1.4 var(--font-brand)">Want to stay informed? Sign up for investor updates</span>
+        <div style="display:flex;gap:12px;max-width:480px">
+          <div style="flex:1"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.TextField" placeholder="you@email.com" hint-size="100%,44px"></x-import></div>
+          <a href="Sign In.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="md" hint-size="110px,44px">Sign up</x-import></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside style="display:flex;flex-direction:column;gap:20px;position:sticky;top:96px">
+      <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" variant="cream" padding="20px 24px" hint-size="100%,110px">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span style="font:500 12px/1 var(--font-brand);letter-spacing:.12em;text-transform:uppercase;color:var(--chl-ink-40)">ASX : CHL</span>
+          <span style="font:500 28px/1.2 var(--font-brand)">$X.XX <span style="font:500 13px var(--font-brand);color:var(--color-success)">▲ X.X%</span></span>
+          <span style="font:400 12px var(--font-brand);color:var(--chl-ink-40)">Share price widget placeholder</span>
+        </div>
+      </x-import>
+
+      <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" padding="20px 24px" hint-size="100%,240px">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font:500 12px/1 var(--font-brand);letter-spacing:.12em;text-transform:uppercase;color:var(--chl-ink-40)">Related content</span>
+          <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+            <a href="Announcement Detail.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:4px;border-bottom:1px solid var(--chl-ink-15);padding-bottom:12px">
+              <span style="font:400 12px var(--font-brand);color:var(--chl-ink-40)">{{ r.type }} · DD Mon</span>
+              <span style="font:500 14px/1.4 var(--font-brand)">{{ r.title }}</span>
+            </a>
+          </sc-for>
+        </div>
+      </x-import>
+
+      <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" variant="tint" padding="20px 24px" hint-size="100%,160px">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font:600 16px/1.4 var(--font-brand)">Have a question about this announcement?</span>
+          <a href="QA.dc.html" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="sm" hint-size="150px,36px">Ask the CHL team</x-import></a>
+        </div>
+      </x-import>
+    </aside>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:var(--chl-forest-black)">
+    <div style="max-width:1240px;margin:0 auto;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+      <span style="font:400 13px var(--font-brand);color:var(--chl-white-50)">ASX: CHL · Powered by Camplify Holdings</span>
+      <div style="display:flex;gap:24px">
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Privacy</a>
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Terms</a>
+        <a href="QA.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Contact IR</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      files: [
+        { name: 'ASX-Announcement-placeholder.pdf', size: 'X.X MB' },
+        { name: 'Investor-presentation-placeholder.pdf', size: 'X.X MB' },
+      ],
+      related: [
+        { type: 'ASX Announcement', title: 'Related announcement headline placeholder' },
+        { type: 'Research', title: 'Related SmallCaps article title placeholder' },
+        { type: 'Recording', title: 'Related webinar recording title placeholder' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

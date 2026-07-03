@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/tokens/base.css">
+  <link rel="stylesheet" href="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/styles.css">
+  <script src="_ds/chl-group-design-system-a19f762c-63fe-4532-9ff5-d224881e4181/_ds_bundle.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:var(--chl-questro-cream);font-family:var(--font-brand);color:var(--chl-forest-black)" data-screen-label="18 Account settings">
+
+  <!-- ============ TOP NAV (signed in) ============ -->
+  <div style="position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--chl-gambier-grey)">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;gap:20px">
+      <a href="Home Signed In.dc.html" style="display:flex;align-items:center;flex-shrink:0"><img src="assets/CHL-Group-Wide.svg" alt="CHL Group" style="height:30px;display:block"></a>
+      <span style="font:500 11px/1 var(--font-brand);letter-spacing:.14em;color:var(--chl-ink-40);text-transform:uppercase;border-left:1px solid var(--chl-gambier-grey);padding-left:16px">Investor hub</span>
+      <nav style="display:flex;gap:22px;align-items:center;margin-left:auto">
+        <a href="Home Signed In.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Home</a>
+        <a href="Why Invest.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Why invest</a>
+        <a href="About.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">About</a>
+        <a href="Announcements.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Announcements</a>
+        <a href="Webinars.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Webinars</a>
+        <a href="QA.dc.html#signedin" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Q&amp;A</a>
+        <a href="Rewards.dc.html" style="font:500 14px var(--font-brand);color:var(--chl-ink-60);text-decoration:none">Rewards</a>
+        <a href="My Account.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Avatar" name="Investor Name" size="34" hint-size="34px,34px"></x-import>
+          <span style="font:500 14px var(--font-brand);color:var(--chl-forest-black)">My account</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ============ SIGNED-IN SUB MENU ============ -->
+  <div style="background:var(--chl-forest-black)">
+    <div style="max-width:1240px;margin:0 auto;padding:0 32px;height:46px;display:flex;align-items:center;gap:26px">
+      <span style="font:500 11px/1 var(--font-brand);letter-spacing:.12em;text-transform:uppercase;color:var(--chl-white-50);flex-shrink:0">My hub</span>
+      <a href="Home Signed In.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">Overview</a>
+      <a href="My Account.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">My account</a>
+      <a href="Account Settings.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white);text-decoration:none;border-bottom:2px solid var(--chl-reef-blue);padding-bottom:2px">Account settings</a>
+      <a href="Pricing Data.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">Pricing data</a>
+      <a href="Key Dates.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">Key dates</a>
+      <a href="AGMs.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">AGMs</a>
+      <a href="Reports.dc.html" style="font:500 13px var(--font-brand);color:var(--chl-white-75);text-decoration:none">Reports</a>
+      <a href="https://portal.automic.com.au/investor/home" target="_blank" style="font:500 13px var(--font-brand);color:var(--chl-bay-blue);text-decoration:none;margin-left:auto">Automic portal ↗</a>
+    </div>
+  </div>
+
+  <div style="max-width:1100px;margin:0 auto;padding:48px 32px 72px;display:flex;flex-direction:column;gap:28px">
+    <h1 style="font:500 36px/1.25 var(--font-brand);letter-spacing:-0.01em;margin:0">Account settings</h1>
+
+    <div style="display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:start">
+
+      <!-- settings sidebar -->
+      <div style="display:flex;flex-direction:column;gap:6px;position:sticky;top:96px">
+        <span style="padding:12px 18px;border-radius:12px;font:500 14px var(--font-brand);cursor:pointer;background:{{ t1bg }};color:{{ t1c }}" onClick="{{ goDetails }}">Account details</span>
+        <span style="padding:12px 18px;border-radius:12px;font:500 14px var(--font-brand);cursor:pointer;background:{{ t2bg }};color:{{ t2c }}" onClick="{{ goStatus }}">Investor status</span>
+        <span style="padding:12px 18px;border-radius:12px;font:500 14px var(--font-brand);cursor:pointer;background:{{ t3bg }};color:{{ t3c }}" onClick="{{ goNotifs }}">Notification settings</span>
+        <a href="My Account.dc.html" style="padding:12px 18px;font:400 13px var(--font-brand);color:var(--chl-ink-40);text-decoration:none">← Back to my account</a>
+      </div>
+
+      <!-- ===== TAB 1: account details ===== -->
+      <sc-if value="{{ isDetails }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" padding="32px" hint-size="100%,340px">
+            <div style="display:flex;flex-direction:column;gap:20px">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <span style="font:600 20px var(--font-brand)">My details</span>
+                <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="sm" hint-size="80px,36px">Edit ✎</x-import>
+              </div>
+              <div style="background:var(--chl-questro-cream);border-radius:12px;padding:12px 18px;font:400 13px/1.5 var(--font-brand);color:var(--chl-ink-60)">ⓘ Your username and email address cannot be changed for this account.</div>
+              <div style="display:flex;flex-direction:column">
+                <div style="display:grid;grid-template-columns:160px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--chl-ink-15)">
+                  <span style="font:400 14px var(--font-brand);color:var(--chl-ink-60)">Full name</span>
+                  <span style="font:500 14px var(--font-brand)">Investor Name</span>
+                </div>
+                <div style="display:grid;grid-template-columns:160px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--chl-ink-15)">
+                  <span style="font:400 14px var(--font-brand);color:var(--chl-ink-60)">Username</span>
+                  <span style="font:500 14px var(--font-brand)">username</span>
+                </div>
+                <div style="display:grid;grid-template-columns:160px 1fr;gap:16px;padding:16px 0">
+                  <span style="font:400 14px var(--font-brand);color:var(--chl-ink-60)">Email address</span>
+                  <span style="font:500 14px var(--font-brand)">investor@email.com</span>
+                </div>
+              </div>
+            </div>
+          </x-import>
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" padding="32px" hint-size="100%,140px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:24px">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <span style="font:600 20px var(--font-brand)">Sign-in method</span>
+                <span style="font:400 14px var(--font-brand);color:var(--chl-ink-60)">Passwordless — we email you a secure magic link each time you sign in.</span>
+              </div>
+              <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="sm" hint-size="180px,36px">Send test link</x-import>
+            </div>
+          </x-import>
+          <span style="font:400 13px var(--font-brand);color:var(--chl-ink-40)">Need a change to your personal data? <a href="QA.dc.html#signedin" style="color:var(--chl-reef-blue-deep)">Contact the IR team</a> to let us know.</span>
+        </div>
+      </sc-if>
+
+      <!-- ===== TAB 2: investor status ===== -->
+      <sc-if value="{{ isStatus }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <!-- nightly matching -->
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" padding="28px" hint-size="100%,240px">
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <span style="font:600 18px/1.4 var(--font-brand)">Your holding — verified automatically</span>
+              <p style="font:400 14px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0">We match your hub email against the CHL share register (Automic) every night. Nothing to enter — if your registry email matches, your holding verifies automatically and stays up to date.</p>
+              <div style="display:flex;align-items:center;gap:10px;background:var(--chl-questro-cream);border-radius:12px;padding:12px 16px">
+                <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Badge" tone="success" dot="{{ true }}" hint-size="80px,24px">Matched</x-import>
+                <span style="font:400 13px var(--font-brand);color:var(--chl-ink-60)">X,XXX shares · verified DD Mon</span>
+              </div>
+            </div>
+          </x-import>
+          <!-- email mismatch → Automic -->
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" variant="tint" padding="28px" hint-size="100%,200px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+              <div style="display:flex;flex-direction:column;gap:6px;max-width:560px">
+                <span style="font:600 18px/1.4 var(--font-brand)">Holding not matching?</span>
+                <p style="font:400 14px/1.6 var(--font-brand);color:var(--chl-ink-60);margin:0">Your email on the share register may differ from your hub email. Update your email address with Automic via the registry portal and we'll match your holding on the next nightly run. Automic is also where you manage your holding — statements, details and communications.</p>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start">
+                <a href="https://portal.automic.com.au/investor/home" target="_blank" style="text-decoration:none"><x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="sm" hint-size="220px,36px">Go to Automic portal ↗</x-import></a>
+                <span style="font:400 12px var(--font-brand);color:var(--chl-ink-40)">portal.automic.com.au — opens in a new tab</span>
+              </div>
+            </div>
+          </x-import>
+          <!-- qualified investor -->
+          <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" padding="28px" hint-size="100%,160px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+              <div style="display:flex;flex-direction:column;gap:4px;max-width:560px">
+                <span style="font:600 18px var(--font-brand)">Qualified investor status</span>
+                <span style="font:400 14px/1.6 var(--font-brand);color:var(--chl-ink-60)">Are you a qualified (s708 or professional) investor? Confirm your status to be the first to know about future investment opportunities, including placements.</span>
+              </div>
+              <div style="display:flex;gap:12px">
+                <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="outline" size="sm" hint-size="210px,36px">I'm not a qualified investor</x-import>
+                <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Button" variant="primary" size="sm" hint-size="170px,36px">Upload certificate</x-import>
+              </div>
+            </div>
+          </x-import>
+        </div>
+      </sc-if>
+
+      <!-- ===== TAB 3: notifications ===== -->
+      <sc-if value="{{ isNotifs }}" hint-placeholder-val="{{ false }}">
+        <x-import component-from-global-scope="CHLGroupDesignSystem_a19f76.Card" padding="32px" hint-size="100%,560px">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font:600 20px var(--font-brand);margin-bottom:12px">Notification settings</span>
+            <sc-for list="{{ notifs }}" as="n" hint-placeholder-count="6">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding:16px 0;border-bottom:1px solid var(--chl-ink-15)">
+                <div style="display:flex;flex-direction:column;gap:2px;max-width:560px">
+                  <span style="font:500 15px var(--font-brand)">{{ n.title }}</span>
+                  <span style="font:400 13px/1.5 var(--font-brand);color:var(--chl-ink-60)">{{ n.desc }}</span>
+                </div>
+                <span style="width:44px;height:24px;border-radius:100px;background:{{ n.bg }};position:relative;cursor:pointer;flex-shrink:0"><span style="position:absolute;top:2px;{{ n.side }}:2px;width:20px;height:20px;border-radius:50%;background:var(--chl-white)"></span></span>
+              </div>
+            </sc-for>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding:20px 0 4px">
+              <div style="display:flex;flex-direction:column;gap:2px;max-width:560px">
+                <span style="font:500 15px var(--font-brand);color:var(--color-danger)">Unsubscribe from all</span>
+                <span style="font:400 13px/1.5 var(--font-brand);color:var(--chl-ink-60)">You will no longer receive any email notifications from CHL Group.</span>
+              </div>
+              <span style="width:44px;height:24px;border-radius:100px;background:var(--chl-gambier-grey);position:relative;cursor:pointer;flex-shrink:0"><span style="position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:var(--chl-white)"></span></span>
+            </div>
+          </div>
+        </x-import>
+      </sc-if>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:var(--chl-forest-black)">
+    <div style="max-width:1240px;margin:0 auto;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+      <span style="font:400 13px var(--font-brand);color:var(--chl-white-50)">ASX: CHL · Powered by Camplify Holdings</span>
+      <div style="display:flex;gap:24px">
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Privacy</a>
+        <a href="Home.dc.html" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Terms</a>
+        <a href="QA.dc.html#signedin" style="font:400 13px var(--font-brand);color:var(--chl-white-50);text-decoration:none">Contact IR</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tab: 'details' };
+  renderVals() {
+    const tab = this.state.tab;
+    const sel = (t) => tab === t;
+    const bg = (t) => (sel(t) ? 'var(--chl-forest-black)' : 'transparent');
+    const c = (t) => (sel(t) ? 'var(--chl-white)' : 'var(--chl-ink-60)');
+    const mkNotif = (title, desc, on = true) => ({
+      title, desc,
+      bg: on ? 'var(--chl-reef-blue)' : 'var(--chl-gambier-grey)',
+      side: on ? 'right' : 'left',
+    });
+    return {
+      isDetails: sel('details'), isStatus: sel('status'), isNotifs: sel('notifs'),
+      t1bg: bg('details'), t1c: c('details'),
+      t2bg: bg('status'), t2c: c('status'),
+      t3bg: bg('notifs'), t3c: c('notifs'),
+      goDetails: () => this.setState({ tab: 'details' }),
+      goStatus: () => this.setState({ tab: 'status' }),
+      goNotifs: () => this.setState({ tab: 'notifs' }),
+      notifs: [
+        mkNotif('General updates', 'Receive an email when CHL releases an update, newsletter, or other content.'),
+        mkNotif('ASX announcements', 'Receive an email when CHL releases an announcement.'),
+        mkNotif('Research & articles', 'Receive an email when new SmallCaps research is published to the hub.'),
+        mkNotif('Q&A responses', 'Receive an email when the CHL team responds to your question or changes its privacy settings.'),
+        mkNotif('Webinar invites & reminders', 'Receive invites for upcoming webinars and reminders before they start.'),
+        mkNotif('Capital raise opportunities', 'Receive an email about opportunities to participate in a capital raise event, if eligible.', false),
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

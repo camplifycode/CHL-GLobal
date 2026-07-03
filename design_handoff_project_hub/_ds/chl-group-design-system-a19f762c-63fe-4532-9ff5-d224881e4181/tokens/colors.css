@@ -1,0 +1,67 @@
+/* ============================================================
+   CHL GROUP · COLOR TOKENS
+   Palette named after Australian natural landmarks (per Brand Guidelines 2023).
+   Base values first, then semantic aliases.
+   ============================================================ */
+
+:root {
+  /* ---- Primary palette ---- */
+  --chl-reef-blue:        #44B0BF; /* Great Barrier Reef Blue — primary brand teal */
+  --chl-bay-blue:         #98DBE4; /* Bay of Fires Blue — light teal, logo mark, accents */
+  --chl-forest-black:     #141623; /* Southern Forests Black — brand ink / dark navy */
+  --chl-questro-cream:    #F6F5F4; /* El Questro Cream — warm off-white ground */
+
+  /* ---- Secondary palette ---- */
+  --chl-white:            #FFFFFF; /* Whitsundays White */
+  --chl-gambier-grey:     #E2E2E2; /* Mount Gambier Grey — borders, dividers */
+  --chl-alice-blue:       #F0FAFB; /* Alice Springs Blue — pale teal tint surface */
+
+  /* ---- Extended / derived (harmonious, for states & depth) ---- */
+  --chl-reef-blue-dark:   #2E97A5; /* pressed / darker teal */
+  --chl-reef-blue-deep:   #1E7B88; /* text-on-cream teal, high contrast */
+  --chl-forest-black-80:  #2A2C3B; /* raised dark surface */
+  --chl-forest-black-90:  #0D0F1A; /* deepest footer black */
+  --chl-ink-60:           rgba(20, 22, 35, 0.60); /* body text on light */
+  --chl-ink-40:           rgba(20, 22, 35, 0.40); /* muted / captions */
+  --chl-ink-15:           rgba(20, 22, 35, 0.15); /* hairlines on light */
+  --chl-white-75:         rgba(255, 255, 255, 0.75); /* body text on dark */
+  --chl-white-50:         rgba(255, 255, 255, 0.50); /* muted on dark */
+  --chl-white-10:         rgba(255, 255, 255, 0.10); /* hairlines on dark */
+  --chl-white-06:         rgba(255, 255, 255, 0.06); /* glass surface on dark */
+  --chl-reef-tint-15:     rgba(68, 176, 191, 0.15);  /* teal glass fill */
+  --chl-reef-tint-30:     rgba(68, 176, 191, 0.30);  /* teal glass border */
+
+  /* ---- Semantic aliases ---- */
+  --color-brand:            var(--chl-reef-blue);
+  --color-brand-hover:      var(--chl-bay-blue);
+  --color-brand-active:     var(--chl-reef-blue-dark);
+  --color-brand-contrast:   var(--chl-forest-black);   /* text ON the teal */
+  --color-accent:           var(--chl-bay-blue);
+
+  --color-ink:              var(--chl-forest-black);    /* primary text on light */
+  --color-ink-muted:        var(--chl-ink-60);
+  --color-ink-subtle:       var(--chl-ink-40);
+
+  --surface-page:           var(--chl-white);
+  --surface-cream:          var(--chl-questro-cream);
+  --surface-tint:           var(--chl-alice-blue);
+  --surface-dark:           var(--chl-forest-black);
+  --surface-dark-raised:    var(--chl-forest-black-80);
+  --surface-dark-deep:      var(--chl-forest-black-90);
+  --surface-glass-dark:     var(--chl-white-06);
+  --surface-card:           var(--chl-white);
+
+  --text-on-dark:           var(--chl-white);
+  --text-on-dark-muted:     var(--chl-white-75);
+  --text-on-dark-subtle:    var(--chl-white-50);
+
+  --border-subtle:          var(--chl-gambier-grey);
+  --border-hairline:        var(--chl-ink-15);
+  --border-on-dark:         var(--chl-white-10);
+
+  /* ---- Feedback ---- */
+  --color-success:          #2E9E6B;
+  --color-warning:          #E6A23C;
+  --color-danger:           #D9534F;
+  --color-info:             var(--chl-reef-blue);
+}
